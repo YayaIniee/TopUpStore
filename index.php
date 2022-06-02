@@ -69,7 +69,7 @@
 					if(in_array($p.'.php', $pages)){
 						include($pages_dir.'/'.$p.'.php');
 					} else {
-						echo 'pages no found dude! xixixixix';
+						echo '404 <br> pages no found <br> : (';
 					}
 				} else {
 					include($pages_dir.'/home.php');
