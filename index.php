@@ -27,12 +27,26 @@
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
                             </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="page-sroll" href="">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-sroll" href="">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-sroll" href="">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    
     
 </body>
 </html>
