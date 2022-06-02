@@ -5,7 +5,7 @@ class Connection{
    private $host = "localhost";
    private $struser = "root";
    private $strpassword = "";
-   private $strdbname = "crud";   
+   private $strdbname = "topupstore";   
    public $connection;
       
 	function __construct() {

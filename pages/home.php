@@ -13,8 +13,8 @@
 
 					foreach ($arrayResult as $dataGame) {
 						echo '<div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3" >
-                			<a href="index.php?p=&id='.$dataGame->id.'"><img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid rounded-3" id=""></a>
-                			<a href="index.php?p=&id='.$dataGame->id.'" class="title">'.$dataGame->nama.'</a>
+                			<a href="index.php?p=sectiongame&id='.$dataGame->id.'"><img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid rounded-3" id=""></a>
+                			<a href="index.php?p=sectiongame&id='.$dataGame->id.'" class="title">'.$dataGame->nama.'</a>
             			</div>
 							  
 							  ';
