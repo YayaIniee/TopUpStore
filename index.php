@@ -27,7 +27,7 @@ if (!isset($_SESSION)) {
   </head>
   <body>
     <!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light mb-3">
   <div class="container">
     <a class="navbar-brand font-nav" href="index.php"><img src="image/icon.png" width="" alt="">Top Up Games</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
