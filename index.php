@@ -1,63 +1,70 @@
 <?php 
- 	require "inc.koneksi.php";		
+if (!isset($_SESSION)) {
+  session_start();
+}
+  require "inc.koneksi.php";
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>|[ Top Up Games Store ]|</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tip Ip Gimis Stire</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/popper.min.js"></script>
+    <!-- My CSSStyle -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonts Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<nav class="navbar navbar-expand-sm bg-black navbar-dark sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">
-      	<img src="#" alt="TopUpStore" style="width:150px;">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&family=Righteous&display=swap" rel="stylesheet">
+    <!-- font-family: 'Goldman', cursive; font-family: 'Righteous', cursive; -->
+  </head>
+  <body>
+    <!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand font-nav" href="index.php"><img src="image/icon.png" width="" alt="">Top Up Games</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav me-auto">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <li class="nav-item">
-            <a href="index.php" class="nav-link text-white">HOME</i></a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-white">ABOUT US</i></a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?p=gamelist" class="nav-link text-white">GameList</i></a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?p=game" class="nav-link text-white">Game</i></a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?p=genrelist" class="nav-link text-white">GenreList</i></a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?p=genre" class="nav-link text-white">Genre</i></a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?p=sectiongame" class="nav-link text-white">SectionGame</i></a>
-          </li>
-        </li>   
-        <li class="nav-item"><a class="nav-link" href="index.php?p=login">Login</a></li>      
-      <li class="nav-item"><a class="nav-link" href="index.php?p=register">Register</a></li>
+          <a href="index.php" class="nav-link font-nav active" aria-current="page">HOME</i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link font-nav">ABOUT US</i></a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?p=gamelist" class="nav-link font-nav">GameList</i></a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?p=game" class="nav-link font-nav">Game</i></a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?p=genrelist" class="nav-link font-nav">GenreList</i></a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?p=genre" class="nav-link font-nav">Genre</i></a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?p=sectiongame" class="nav-link font-nav">SectionGame</i></a>
+       </li>
+
       </ul>
+      <form class="">
+        <button class="btn font-nav" type="submit">Sign In</button>
+        <button class="btn btn-outline-dark font-nav" type="submit">Login</button>
+      </form>
     </div>
   </div>
-</nav>
-
+</nav> 
 
 <div class="container">		
 		<?php
@@ -78,7 +85,5 @@
 		?>
 </div>
 
-
-</body>
+  </body>
 </html>
-

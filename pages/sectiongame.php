@@ -51,36 +51,10 @@
               </div> <!-- card-body -->
             </div> <!-- card -->
           </div>
-          <div class="col-12 mb-3"> <!-- Metode Pembayaran -->
-            <div class="card">
-              <div class="card-body">
-                <div class="">3</div>
-                <h5 class="">Metode Pembayaran</h5>
-                <div class="mt-4">
-                  <div class="methods">
-                    <div class="row mx-1">
-                      <div class="col-12 mt-2 kol">
-                        <input type="radio" name="mtdpay" id="gopay">
-                        <label for="gopay"><img src="pict/Gopay.png" alt=""></label>
-                      </div>
-                      <div class="col-12 mt-2 kol">
-                        <input type="radio" name="mtdpay" id="dana">
-                        <label for="dana"><img src="pict/Dana.png" alt=""></label>
-                      </div>
-                      <div class="col-12 mt-2 kol">
-                        <input type="radio" name="mtdpay" id="ovo">
-                        <label for="ovo"><img src="pict/ovo.png" alt=""></label>
-                      </div>
-                    </div>                             
-                  </div>
-                </div>
-              </div> <!-- card-body -->
-            </div> <!-- card -->
-          </div>
           <div class="col-12 mb-3"> <!-- Nomer Telp -->
             <div class="card">
               <div class="card-body">
-                <div class="">4</div>
+                <div class="">3</div>
                 <h5 class="">No Whatsapp</h5>
                 <div class="mt-4">
                   <input type="number" class="form-control" name="notelp" placeholder="08xx xxxx xxxx" id="notelp">
