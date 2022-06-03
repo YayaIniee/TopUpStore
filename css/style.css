@@ -1,6 +1,7 @@
 body{
     background-color: rgba(249, 242, 205, 1);
 }
+/* navbar */
 .font-nav{
     font-family: 'Goldman', cursive;
 }
@@ -18,20 +19,20 @@ body{
 #layanan{
     font-family: 'Goldman', cursive;
 }
-.card{
+.card-game{
     border: none;
 }
-.card-body h5{
+.card-game-body h5{
     color: black;
     text-align: center;
     font-family: 'Goldman', cursive;
 }
-.card:hover{
+.card-game:hover{
     background: linear-gradient(170deg, #ffd902, #ffd904,rgb(36, 36, 36));
     box-shadow: 0 10px 20px #0000;
     transition: all ease-in-out .3s;
 }
-.card:hover .card-body h5{
+.card-game:hover .card-body h5{
     color: white;
     transition: all ease-in-out .3s;
 }

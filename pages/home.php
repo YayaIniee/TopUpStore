@@ -38,11 +38,11 @@
 				foreach ($arrayResult as $dataGame) {
           echo '
             <div class="col-md-3 mb-4">
-              <div class="card p-2" width="22rem">
+              <div class="card card-game p-2" width="22rem">
                 <a href="index.php?p=sectiongame&id='.$dataGame->id.'">
                   <img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid">
                     </a>
-                <div class="card-body">
+                <div class="card-body card-game-body">
                   <a href="index.php?p=sectiongame&id='.$dataGame->id.'" class="title"><h5>'.$dataGame->nama.'</h5></a>
                 </div>
                 </div>

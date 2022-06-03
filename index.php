@@ -53,9 +53,6 @@ if (!isset($_SESSION)) {
         <li class="nav-item">
           <a href="index.php?p=genre" class="nav-link font-nav">Genre</i></a>
         </li>
-        <li class="nav-item">
-          <a href="index.php?p=sectiongame" class="nav-link font-nav">SectionGame</i></a>
-       </li>
 
       </ul>
       <form class="">
