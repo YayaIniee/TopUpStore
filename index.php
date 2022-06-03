@@ -39,7 +39,7 @@ if (!isset($_SESSION)) {
           <a href="index.php" class="nav-link font-nav active" aria-current="page">HOME</i></a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link font-nav">ABOUT US</i></a>
+          <a href="#" class="nav-link font-nav">About</i></a>
         </li>
         <li class="nav-item">
           <a href="index.php?p=gamelist" class="nav-link font-nav">GameList</i></a>
@@ -56,7 +56,7 @@ if (!isset($_SESSION)) {
         <li class="nav-item">
           <a href="index.php?p=sectiongame" class="nav-link font-nav">SectionGame</i></a>
        </li>
-       
+
       </ul>
       <form class="">
         <button class="btn font-nav" type="submit">Sign Up</button>
