@@ -63,7 +63,7 @@ if (!isset($_SESSION)) {
       </ul>
       <form class="">
         <button class="btn font-nav" type="submit">Sign Up</button>
-        <button class="btn btn-outline-dark font-nav" type="submit">Login</button>
+        <button class="btn btn-outline-dark font-nav" type="submit">Sign In</button>
       </form>
     </div>
   </div>
