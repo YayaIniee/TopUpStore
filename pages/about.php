@@ -17,7 +17,7 @@
                         <div class="team-content">
                             <h4 class="">Ahmad Nur Hidaya</h4>
                             <span class="sub-title">2010130002</span>
-                            <ul class="social mt-25">
+                            <ul class="social mt-4">
                                 <li><a href="https://www.instagram.com/ya2_inie/"><i class="lni-instagram-original"></i></a></li>
                                 <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-twitter-original"></i></a></li>
@@ -33,10 +33,10 @@
                         <div class="team-content">
                             <h4 class="">Refido Arjunal Akmal</h4>
                             <span class="sub-title">2010130013</span>
-                            <ul class="social mt-25">
-                                <li><a href="https://www.instagram.com/refidoarjunalakmal/"><i class="lni-instagram-original"></i></a></li>
-                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                                <li><a href="#"><i class="lni-twitter-original"></i></a></li>
+                            <ul class="social mt-4">
+                                <li><a href="https://www.instagram.com/refidoarjunalakmal/"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
                             </ul>
                         </div>
                     </div> <!-- single team -->
@@ -49,7 +49,7 @@
                         <div class="team-content">
                             <h4 class="">Ryo Resha Herdiansyah</h4>
                             <span class="sub-title">2010130014</span>
-                            <ul class="social mt-25">
+                            <ul class="social mt-4">
                                 <li><a href="https://www.instagram.com/ryorsh_22/"><i class="lni-instagram-original"></i></a></li>
                                 <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-twitter-original"></i></a></li>

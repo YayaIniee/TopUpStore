@@ -82,7 +82,7 @@ body{
       -o-transition: all 0.4s ease-out 0s;
       transition: all 0.4s ease-out 0s; }
       .single-team .team-content .team-name a:hover {
-        color: #eba636; }
+        color: #000000; }
     .single-team .team-content .sub-title {
       font-size: 14px;
       color: #646464; }
@@ -113,8 +113,8 @@ body{
           -o-transition: all 0.4s ease-out 0s;
           transition: all 0.4s ease-out 0s; }
           .single-team .team-content .social li a:hover {
-            background-color: #f1aa26;
-            color: #fcf7d9; }
+            background-color: #030303;
+            color: #101010; }
   
   .single-team:hover .team-content {
     background-color: #fffdef;

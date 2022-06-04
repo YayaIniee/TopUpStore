@@ -1,15 +1,23 @@
 
+<?php
+  if(isset($_GET['id'])){	
+		require_once('./class/class.Game.php'); 
+		$objGame = new Game(); 
+		$objGame->id = $_GET['id'];	
+		$objGame->SelectOneGame();
+	}
 
+?>
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-sm-12 col-lg-4">
-        <h4>Nama Game</h4>
+        <h4><?php echo $objGame->nama; ?></h4>
         <div class="col-lg-6 col-md-8 col-8 ">
-            <img class="img-fluid" src="" alt="foto" width="100%">
+            <?php echo '<img class="img-fluid" src="./assets/upload/game/'.$dataGame->foto.'" alt="foto" width="100%">' ?>
             <hr class="d-sm">
         </div>
         <div class="col-12">
-        <b>Nama Game</b> <br>
+        <b><?php echo $objGame->nama; ?></b> <br>
         Detail atau deskripsi game
         </div>
         <hr class="d-sm">
