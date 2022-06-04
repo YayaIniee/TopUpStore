@@ -38,9 +38,9 @@
 				foreach ($arrayResult as $dataGame) {
           echo '
             <div class="col-md-3 mb-4">
-              <div class="card card-game p-2 shadow-lg" width="22rem">
+              <div class="card wrapper-game card-game p-2 shadow-lg" width="22rem">
                   <a href="index.php?p=sectiongame&id='.$dataGame->id.'">
-                  <img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid rounded-3">
+                  <img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid rounded-3 img-game">
                 </a>
                 <div class="card-body card-game-body rounded-3">
                   <a href="index.php?p=sectiongame&id='.$dataGame->id.'" class="title" style="text-decoration:none;"><h5>'.$dataGame->nama.'</h5></a>
