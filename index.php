@@ -77,13 +77,16 @@ if (!isset($_SESSION)) {
 					if(in_array($p.'.php', $pages)){
 						include($pages_dir.'/'.$p.'.php');
 					} else {
-						echo '404 <br> pages no found <br> : (';
+						echo '<div class="text-center my-5">
+                    <img src="image/404.png" class="mx-auto d-block">
+                    <h1>404 <small>page not found!</small></h1>
+                  </div>
+                  ';
 					}
 				} else {
 					include($pages_dir.'/home.php');
 				}
 		?>
 </div>
-
   </body>
 </html>
