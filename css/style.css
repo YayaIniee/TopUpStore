@@ -1,18 +1,22 @@
 body{
-    background-color: rgba(249, 242, 205, 1);
+    background:#f8f3d4;
 }
 /* navbar */
 .font-nav{
     font-family: 'Goldman', cursive;
 }
 .navbar-brand{
-    font-weight: 700;
+    font-weight: 400;
 }
 .navbar{
     background-color: rgba(255, 215, 2, 1);
 }
 .nav-link.active{
-    font-weight: 600;
+    font-weight: 300;
+}
+.nav-link:hover{
+    color: black;
+    font-weight: 400;
 }
 
 /* section game*/
@@ -21,6 +25,7 @@ body{
 }
 .card-game{
     border: none;
+    background-color: #fffdef;
 }
 .card-game-body h5{
     color: black;
@@ -28,11 +33,231 @@ body{
     font-family: 'Goldman', cursive;
 }
 .card-game:hover{
-    background: linear-gradient(170deg, #ffd902, #ffd904,rgb(36, 36, 36));
+    background: linear-gradient(170deg, #f9e688, #efd75f,#433301);
     box-shadow: 0 10px 20px #0000;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .4s;
 }
-.card-game:hover .card-body h5{
+.card-game:hover .card-game-body h5{
     color: white;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .4s;
 }
+.btn-singup:hover{
+    color: whitesmoke;
+}
+
+.fnt{
+    font-family: 'Goldman', cursive;
+}
+/* About */
+
+@media (max-width: 767px) {
+    .team-area {
+      padding-top: 75px;
+      padding-bottom: 80px; } }
+  
+  .single-team .team-image img {
+    width: 100%; }
+  
+  .single-team .team-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 15px;
+    position: relative;
+    -webkit-transition: all 0.4s ease-out 0s;
+    -moz-transition: all 0.4s ease-out 0s;
+    -ms-transition: all 0.4s ease-out 0s;
+    -o-transition: all 0.4s ease-out 0s;
+    transition: all 0.4s ease-out 0s; }
+    @media only screen and (min-width: 992px) and (max-width: 1200px) {
+      .single-team .team-content {
+        padding: 30px 0; } }
+    .single-team .team-content .team-name a {
+      font-size: 18px;
+      font-weight: 600;
+      color: #121619;
+      font-family: 'Hind', sans-serif;
+      -webkit-transition: all 0.4s ease-out 0s;
+      -moz-transition: all 0.4s ease-out 0s;
+      -ms-transition: all 0.4s ease-out 0s;
+      -o-transition: all 0.4s ease-out 0s;
+      transition: all 0.4s ease-out 0s; }
+      .single-team .team-content .team-name a:hover {
+        color: #eba636; }
+    .single-team .team-content .sub-title {
+      font-size: 14px;
+      color: #646464; }
+    .single-team .team-content .social {
+      margin-top: -35px;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: all 0.4s ease-out 0s;
+      -moz-transition: all 0.4s ease-out 0s;
+      -ms-transition: all 0.4s ease-out 0s;
+      -o-transition: all 0.4s ease-out 0s;
+      transition: all 0.4s ease-out 0s; }
+      .single-team .team-content .social li {
+        display: inline-block;
+        margin: 0 7px; }
+        .single-team .team-content .social li a {
+          font-size: 16px;
+          color: #646464;
+          width: 30px;
+          height: 30px;
+          line-height: 35px;
+          text-align: center;
+          border-radius: 50%;
+          background-color: #fcf7d9;
+          -webkit-transition: all 0.4s ease-out 0s;
+          -moz-transition: all 0.4s ease-out 0s;
+          -ms-transition: all 0.4s ease-out 0s;
+          -o-transition: all 0.4s ease-out 0s;
+          transition: all 0.4s ease-out 0s; }
+          .single-team .team-content .social li a:hover {
+            background-color: #f1aa26;
+            color: #fcf7d9; }
+  
+  .single-team:hover .team-content {
+    background-color: #fffdef;
+    margin-top: -60px;
+    -webkit-box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.34);
+    box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.34); }
+    .single-team:hover .team-content .social {
+      margin-top: 25px;
+      opacity: 1;
+      visibility: visible; }
+
+/* Service */
+
+@media (max-width: 767px) {
+    .services-area {
+      padding-top: 75px;
+      padding-bottom: 80px; } }
+  
+  .single-services {
+    padding: 50px 30px;
+    background-color: #fffdef;
+    -webkit-transition: all 0.4s ease-out 0s;
+    -moz-transition: all 0.4s ease-out 0s;
+    -ms-transition: all 0.4s ease-out 0s;
+    -o-transition: all 0.4s ease-out 0s;
+    transition: all 0.4s ease-out 0s; }
+    @media only screen and (min-width: 992px) and (max-width: 1200px) {
+      .single-services {
+        padding: 30px 10px; } }
+    @media (max-width: 767px) {
+      .single-services {
+        padding: 30px 10px; } }
+    .single-services .services-icon i {
+      font-size: 52px;
+      color: #EB3656;
+      -webkit-transition: all 0.4s ease-out 0s;
+      -moz-transition: all 0.4s ease-out 0s;
+      -ms-transition: all 0.4s ease-out 0s;
+      -o-transition: all 0.4s ease-out 0s;
+      transition: all 0.4s ease-out 0s; }
+    .single-services .services-content .services-title {
+      font-size: 22px;
+      font-weight: 600;
+      font-family: 'Barlow', sans-serif;
+      -webkit-transition: all 0.4s ease-out 0s;
+      -moz-transition: all 0.4s ease-out 0s;
+      -ms-transition: all 0.4s ease-out 0s;
+      -o-transition: all 0.4s ease-out 0s;
+      transition: all 0.4s ease-out 0s; }
+    .single-services:hover {
+      background-color: #f2d620; }
+      .single-services:hover .services-icon i {
+        color: #fffdef; }
+      .single-services:hover .services-content .services-title,
+      .single-services:hover .services-content p {
+        color: #fffdef; }
+  
+/* Contact */
+@media (max-width: 767px) {
+    .contact-area {
+      padding-top: 75px;
+      padding-bottom: 80px; } }
+  
+  .form-group {
+    margin: 0; }
+  
+  p.form-message.success,
+  p.form-message.error {
+    font-size: 16px;
+    color: #333;
+    background: #ddd;
+    padding: 10px 15px;
+    margin-left: 15px;
+    margin-top: 15px; }
+  
+  p.form-message.error {
+    color: #f00; }
+  
+  .contact-form .single-form {
+    margin-top: 30px; }
+    .contact-form .single-form textarea,
+    .contact-form .single-form input {
+      width: 100%;
+      height: 60px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      padding: 0 30px;
+      background-color: #fff;
+      font-family: 'Hind', sans-serif;
+      font-size: 16px; }
+    .contact-form .single-form textarea {
+      height: 160px;
+      padding-top: 20px;
+      resize: none; }
+    .contact-form .single-form textarea::placeholder,
+    .contact-form .single-form input::placeholder {
+      opacity: 1;
+      color: #999; }
+  
+  .list-unstyled li {
+    font-size: 13px;
+    margin-left: 2px;
+    margin-top: 5px;
+    color: rgb(234, 195, 0); }
+  
+
+/* Map */
+      .map-area {
+        position: relative;
+        height: 600px; }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          .map-area {
+            height: 450px; } }
+        @media (max-width: 767px) {
+          .map-area {
+            height: 450px; } }
+      
+      .mapouter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%; }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          .mapouter {
+            width: 100%; } }
+        @media (max-width: 767px) {
+          .mapouter {
+            width: 100%; } }
+        .mapouter .gmap_canvas iframe {
+          width: 100%;
+          height: 600px; }
+          @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .mapouter .gmap_canvas iframe {
+              height: 450px; } }
+          @media (max-width: 767px) {
+            .mapouter .gmap_canvas iframe {
+              height: 450px; } }
+      
+      .map-bg {
+        width: 40%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0; }
+      

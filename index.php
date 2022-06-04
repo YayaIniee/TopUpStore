@@ -27,9 +27,9 @@ if (!isset($_SESSION)) {
   </head>
   <body>
     <!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light mb-3">
+<nav class="navbar navbar-expand-lg navbar-light mb">
   <div class="container">
-    <a class="navbar-brand font-nav" href="index.php"><img src="image/icon.png" width="" alt="">Top Up Games</a>
+    <a class="navbar-brand font-nav" href="index.php"><img src="image/icon.png" width="50px" alt="">Top Up Games</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,7 +39,10 @@ if (!isset($_SESSION)) {
           <a href="index.php" class="nav-link font-nav active" aria-current="page">HOME</i></a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link font-nav">About</i></a>
+          <a href="index.php?p=about" class="nav-link font-nav">About</i></a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?p=contact" class="nav-link font-nav">Contact</i></a>
         </li>
         <li class="nav-item">
           <a href="index.php?p=gamelist" class="nav-link font-nav">GameList</i></a>
@@ -56,14 +59,14 @@ if (!isset($_SESSION)) {
 
       </ul>
       <form class="">
-        <button class="btn font-nav" type="submit">Sign Up</button>
-        <button class="btn btn-outline-dark font-nav" type="submit">Sign In</button>
+        <a href="index.php?p=register" class="btn font-nav btn-sm" type="submit">Sing Up</a>
+        <a href="index.php?p=login" class="btn btn-outline-dark font-nav btn-sm" type="submit">Sing In</a>
       </form>
     </div>
   </div>
 </nav> 
 
-<div class="container">		
+<div class="container-fluid">		
 		<?php
 				$pages_dir = 'pages';
 				if(!empty($_GET['p'])){
