@@ -13,7 +13,7 @@
     <div class="col-md-8 col-sm-12 col-lg-4">
         <h4><?php echo $objGame->nama; ?></h4>
         <div class="col-lg-6 col-md-8 col-8 ">
-            <?php echo '<img class="img-fluid" src="./assets/upload/game/'.$dataGame->foto.'" alt="foto" width="100%">' ?>
+            <?php echo '<img class="img-fluid" src="./assets/upload/game/'.$objGame->foto.'" alt="foto" width="100%">' ?>
             <hr class="d-sm">
         </div>
         <div class="col-12">
