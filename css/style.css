@@ -27,6 +27,15 @@ body{
     border: none;
     background-color: #fffdef;
 }
+.wrapper-game{
+  overflow: hidden; 
+}
+.img-game img{
+  transition: transform 0.3s;
+}
+.img-game:hover img{
+  transform: scale(1.1);
+}
 .card-game-body h5{
     color: black;
     text-align: center;
@@ -260,4 +269,3 @@ body{
         position: absolute;
         top: 0;
         right: 0; }
-      

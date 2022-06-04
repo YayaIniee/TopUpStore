@@ -10,23 +10,17 @@
 ?>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-sm-12 col-lg-4">
+    <div class="col-md-8 col-sm-12 col-lg-4 fnt">
         <h4><?php echo $objGame->nama; ?></h4>
-        <div class="col-lg-6 col-md-8 col-8 ">
-            <?php echo '<img class="img-fluid" src="./assets/upload/game/'.$objGame->foto.'" alt="foto" width="100%">' ?>
+        <div class="col-lg-6 col-md-8 col-8">
+            <?php echo '<img class="img-fluid shadow-lg" src="./assets/upload/game/'.$objGame->foto.'" alt="foto" width="100%">' ?>
             <hr class="d-sm">
         </div>
         <div class="col-12">
-        <b><?php echo $objGame->nama; ?></b> <br>
+        <b><?php echo $objGame->nama; ?></b><br>
         Detail atau deskripsi game
         </div>
         <hr class="d-sm">
-        <b>TOP UP GAME LAINNYA</b><br>
-        <div class="col-12 mt-3">
-          <div class="d-grid  mb-3">
-            <a href="" class="btn btn-outline-dark"><img src="" alt="" class="game-lain me-2">Nama game</a>
-          </div>
-        </div>
     </div>
     <div class="col-md-12 col-sm-12 col-lg-8 mt-3">
       <form class="contact form" id="orderform" method="POST" autocomplete="off">
