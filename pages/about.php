@@ -10,7 +10,7 @@
             </div> <!-- row -->
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-team text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
+                    <div class="single-team text-center mt-30">
                         <div class="team-image">
                             <img src="image/team/yay.jpg" alt="Team">
                         </div>
@@ -26,7 +26,7 @@
                     </div> <!-- single team -->
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-team text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
+                    <div class="single-team text-center mt-30">
                         <div class="team-image">
                             <img src="image/team/Refido.jpeg" alt="Team">
                         </div>
@@ -42,7 +42,7 @@
                     </div> <!-- single team -->
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-team text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                    <div class="single-team text-center mt-30">
                         <div class="team-image">
                             <img src="image/team/Ryo.jpg" alt="Team">
                         </div>
