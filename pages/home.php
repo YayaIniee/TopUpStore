@@ -2,15 +2,21 @@
 <!-- carausel for banner -->
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="image/1.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="image/2.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="image/3.jpg" class="d-block w-100" alt="...">
-    </div>
+    <?php
+      require_once('./class/class.Banner.php');
+      $objBanner = new Banner();
+      $arrayResult = $objBanner->SelectAllBanner();
+
+      foreach($arrayResult as $dataBanner){
+        echo '
+              <div class="carousel-item active">
+                <img src="./assets/upload/banner/'.$objBanner->foto.'" class="d-block w-100" alt="...">
+              </div>
+        
+              ';
+      }
+
+    ?>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -38,7 +44,7 @@
 				foreach ($arrayResult as $dataGame) {
           echo '
             <div class="col-md-3 mb-4">
-              <div class="card card-game p-2 shadow-lg" width="22rem">
+              <div class="card wrapper-game card-game p-2 shadow-lg" width="22rem">
                   <a href="index.php?p=sectiongame&id='.$dataGame->id.'">
                   <img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid rounded-3 img-game">
                 </a>

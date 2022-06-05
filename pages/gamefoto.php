@@ -70,7 +70,11 @@
                 <td>:</td>
                 <td><?php 
                      if($objGame->foto != '')
-                     echo "<img src='./assets/upload/game/".$objGame->foto."'width='100px' heigth='100px'/>"; ?></td>
+                     echo '<img src="./assets/upload/game/'.$objGame->foto.'" class="img-fluid" width="100px" heigth="100px"/>';
+                        else
+					    echo '<img src="./assets/upload/banner/default.PNG" class="img-fluid"/>'; 
+                    ?>
+                    </td>
             </tr>
             <tr>
                 <td>Upload foto</td>
