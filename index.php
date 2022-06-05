@@ -11,7 +11,7 @@ if (!isset($_SESSION)) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tip Ip Gimis Stire</title>
+    <title>Tof Up Game St0re</title>
     <link href="css/flexslider.css" rel="stylesheet"/>
 		<link href="css/main.css" rel="stylesheet"/>
     <!-- Bootstrap CSS -->
@@ -31,7 +31,7 @@ if (!isset($_SESSION)) {
   </head>
   <body id="myDIV">
     <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top mb-2">
+  <nav class="navbar navbar-expand-lg navbar-light mb-2">
     <div class="container">
       <a class="navbar-brand font-nav" href="index.php"><img src="image/icon.png" width="50px" alt="">Top Up Games</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +81,7 @@ if (!isset($_SESSION)) {
 					if(in_array($p.'.php', $pages)){
 						include($pages_dir.'/'.$p.'.php');
 					} else {
-						echo '<div class="text-center mt-5 fnt">
+						echo '<div class="text-center mt-5 fnt" id="ene">
                     <img src="image/404.png" class="mx-auto d-block">
                     <h1>404 <small> page not found!</small></h1>
                     <br><br><br>

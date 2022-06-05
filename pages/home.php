@@ -1,5 +1,5 @@
 
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
+<div id="demo" class="carousel slide shadow-lg" data-bs-ride="carousel">
   <div class="carousel-inner">
   <?php
       require_once('./class/class.Banner.php');
