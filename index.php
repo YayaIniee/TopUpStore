@@ -47,16 +47,13 @@ if (!isset($_SESSION)) {
             <a href="index.php?p=contact" class="nav-link font-nav">Contact</i></a>
           </li>
           <li class="nav-item">
-            <a href="index.php?p=gamelist" class="nav-link font-nav">GameList</i></a>
+            <a href="index.php?p=gamelist" class="nav-link font-nav">Game</i></a>
           </li>
           <li class="nav-item">
-            <a href="index.php?p=game" class="nav-link font-nav">Game</i></a>
+            <a href="index.php?p=genrelist" class="nav-link font-nav">Genre</i></a>
           </li>
           <li class="nav-item">
-            <a href="index.php?p=genrelist" class="nav-link font-nav">GenreList</i></a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?p=genre" class="nav-link font-nav">Genre</i></a>
+            <a href="index.php?p=voucher" class="nav-link font-nav">Voucher</i></a>
           </li>
 
         </ul>
