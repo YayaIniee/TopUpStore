@@ -79,56 +79,53 @@ else if(isset($_GET['id'])){
 }
 ?>
 
-<section class="main-content">				
-	<div class="row">						
-		<div class="span12">
-			<div class="row">
-				<div class="span3">
-				<br/>
-					<?php 
-						if($objBanner->foto !='')
-							echo "<img src='./assets/upload/banner/".$objBanner->foto."' width='300px' height='350px'/>"; 
-						else
-							echo "<img src='./assets/upload/banner/default.jpg' width='300px' height='350px'/>"; 
-					?>								
-				</div>
-				<div class="span6">
-				<h4 class="title"><span class="text"><strong>BANNER</strong></span></h4>
-				<form action="" method="post" enctype="multipart/form-data">
-					<table class="table" border="0">
+<section class="main-content">
+	<div class="row">
+		<div class="col-5 mt-5">
+			<?php 
+				if($objBanner->foto !='')
+					/* '<img src="./assets/upload/banner/'.$objBanner->foto.'" class="img-fluid"/>' */
+					echo '<img src="./assets/upload/banner/'.$objBanner->foto.'" class="img-fluid mt-3"/>'; 
+				else
+					echo '<img src="./image/default.png" class="img-fluid"/>'; 
+			?>	
+		</div>
+		<div class="col-7 mt-3">
+			<h4 class="title"><span class="text"><strong>BANNER</strong></span></h4>
+			<form action="" method="post" enctype="multipart/form-data">
+				<table class="table" border="0">
 					<tr>
-					<td>Nama</td>
-					<td>:</td>
-					<td><input type="text" class="form-control" id="nama" name="nama" value="<?php echo $objBanner->nama; ?>"></td>
+						<td>Nama</td>
+						<td>:</td>
+						<td><input type="text" class="form-control" id="nama" name="nama" value="<?php echo $objBanner->nama; ?>"></td>
 					</tr>
 					<tr>
-					<td>Deskripsi1</td>
-					<td>:</td>
-					<td><input type="text" class="form-control" id="deskripsi1" name="deskripsi1" value="<?php echo $objBanner->deskripsi1; ?>"></td>
+						<td>Deskripsi1</td>
+						<td>:</td>
+						<td><input type="text" class="form-control" id="deskripsi1" name="deskripsi1" value="<?php echo $objBanner->deskripsi1; ?>"></td>
 					</tr>
 					<tr>
-					<td>Deskripsi2</td>
-					<td>:</td>
-					<td><input type="text" class="form-control" id="deskripsi2" name="deskripsi2" value="<?php echo $objBanner->deskripsi2; ?>"></td>
+						<td>Deskripsi2</td>
+						<td>:</td>
+						<td><input type="text" class="form-control" id="deskripsi2" name="deskripsi2" value="<?php echo $objBanner->deskripsi2; ?>"></td>
 					</tr>
 					<tr>
-					<td>Upload Foto</td>
-					<td>:</td>
-					<td><input type="file" class="form-control" id="foto" name="foto">
-						<input type="hidden" name="currentfoto" value="<?php echo $objBanner->foto; ?>">	
+						<td>Upload Foto</td>
+						<td>:</td>
+						<td><input type="file" class="form-control" id="foto" name="foto">
+							<input type="hidden" name="currentfoto" value="<?php echo $objBanner->foto; ?>">	
 					</td>
 					</tr>		
 					<tr>
-					<td></td>
-					<td></td>
-					<td><input type="submit" class="btn btn-primary" value="Save" name="btnSubmit">
-						<a href="index.php?p=bannerlist" class="btn btn-primary">Cancel</a></td>
+						<td></td>
+						<td></td>
+						<td><input type="submit" class="btn btn-success" value="Save" name="btnSubmit">
+							<a href="index.php?p=bannerlist" class="btn btn-danger">Cancel</a></td>
 					</tr>	
-					</table>    
-				</form>		
-				</div>							
-			</div>						
-		</div>		
+				</table>    
+			</form>	
+		</div>
 	</div>
-</section>			
+</section>
+		
 	

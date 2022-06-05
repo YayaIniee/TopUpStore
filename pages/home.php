@@ -1,32 +1,36 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+  .mySlides {display:none;}
+</style>
 
-<!-- carausel for banner -->
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <?php
+  <?php
       require_once('./class/class.Banner.php');
       $objBanner = new Banner();
       $arrayResult = $objBanner->SelectAllBanner();
 
       foreach($arrayResult as $dataBanner){
-        echo '
-              <div class="carousel-item active">
-                <img src="./assets/upload/banner/'.$dataBanner->foto.'" class="d-block w-100" alt="...">
-              </div>
-        
-              ';
+        echo 
+          '<div class="w3-section">
+            <img class="mySlides" src="./assets/upload/banner/'.$dataBanner->foto.'" style="width:100%">
+          </div>';
       }
+  ?>
+<script>
+  var myIndex = 0;
+  carousel();
 
-    ?>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> 
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+  }
+</script>
 
 <section id="layanan">
   <div class="container">

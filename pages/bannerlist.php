@@ -2,7 +2,7 @@
 <div class="container">  
 <div class="span11">			
   <h4 class="title"><span class="text"><strong>Banner List</strong></span></h4>
-  <a class="btn btn-primary" href="index.php?p=banner">Add</a>
+  <a class="btn btn-success" href="index.php?p=banner">Add</a>
   <br>
   <br>  
 <table class="table">

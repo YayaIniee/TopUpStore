@@ -2,26 +2,14 @@
 	
 	class Banner extends Connection
 	{
-		private $id =0;
-		private $nama = '';
-		private $deskripsi1 = '';
-        private $deskripsi2 = '';
-        private $foto = '';
-        private $currentfoto = '';
-		private $hasil = false;
-		private $message ='';
-
-		public function __get($atribute) {
-			if (property_exists($this, $atribute)) {
-				return $this->$atribute;
-				}
-		}
-	
-		public function __set($atribut, $value){
-			if (property_exists($this, $atribut)) {
-					$this->$atribut = $value;
-			}
-		}
+		public $id =0;
+		public $nama = '';
+		public $deskripsi1 = '';
+        public $deskripsi2 = '';
+        public $foto = '';
+        public $currentfoto = '';
+		public $hasil = false;
+		public $message ='';
 				
 		public function AddBanner(){
 			$sql = "INSERT INTO tblbanner(nama, deskripsi1, deskripsi2, foto) 

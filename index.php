@@ -12,6 +12,8 @@ if (!isset($_SESSION)) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tip Ip Gimis Stire</title>
+    <link href="css/flexslider.css" rel="stylesheet"/>
+		<link href="css/main.css" rel="stylesheet"/>
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- Bootstrap Bundle with Popper -->
