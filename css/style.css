@@ -1,5 +1,12 @@
 
+#myDIV {
+  background: #faf2bd;
+  animation: mymove 6s infinite;
+}
 
+@keyframes mymove {
+  50% {background-color: rgb(252, 235, 142);}
+}
 /* navbar */
 .font-nav{
     font-family: 'Goldman', cursive;
