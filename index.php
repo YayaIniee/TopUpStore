@@ -53,7 +53,7 @@ if (!isset($_SESSION)) {
             <a href="index.php?p=genrelist" class="nav-link font-nav">Genre</i></a>
           </li>
           <li class="nav-item">
-            <a href="index.php?p=voucher" class="nav-link font-nav">Voucher</i></a>
+            <a href="index.php?p=voucherlist" class="nav-link font-nav">Voucher</i></a>
           </li>
 
         </ul>

@@ -4,7 +4,7 @@
         public $id ='';
         public $nominal ='';
         public $harga ='';
-        public $idgame = '';
+        public $idgame = 0;
         public $namagame = '';
 
         public $hasil = false;
@@ -64,7 +64,6 @@
 				$objVoucher->nominal=$data['nominal'];
 				$objVoucher->idgame=$data['idgame'];
 				$objVoucher->namagame=$data['namagame'];
-				$objVoucher->deskripsi=$data['deskripsi'];
 				$objVoucher->harga=$data['harga'];
 				$arrResult[$count] = $objVoucher;
 				$count++;
