@@ -66,11 +66,29 @@
 				$objVoucher->namagame=$data['namagame'];
 				$objVoucher->deskripsi=$data['deskripsi'];
 				$objVoucher->harga=$data['harga'];
-				$objVoucher->foto=$data['foto'];
 				$arrResult[$count] = $objVoucher;
 				$count++;
 			}
 			return $arrResult;	
+		}
+
+
+
+
+
+            // menu = voucher // category = game
+        public function SelectOneVoucher(){
+			$sql = "SELECT a.*, b.nama as namagame FROM voucher a, game b where a.idgame= b.id AND a.id='$this->id'";
+			$resultOne = mysqli_query($this->connection, $sql);
+			if(mysqli_num_rows($resultOne) == 1){
+				$this->hasil = true;
+				$data = mysqli_fetch_assoc($resultOne);
+				$this->nominal = $data['nominal'];				
+				$this->deskripsi = $data['deskripsi'];	
+				$this->namagame=$data['namagame'];			
+				$this->harga = $data['harga'];
+				$this->idgame = $data['idgame'];	
+			}							
 		}
 
     } // end class Voucher()
