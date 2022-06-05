@@ -1,8 +1,6 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-  .mySlides {display:none;}
-</style>
 
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
   <?php
       require_once('./class/class.Banner.php');
       $objBanner = new Banner();
@@ -10,28 +8,19 @@
 
       foreach($arrayResult as $dataBanner){
         echo 
-          '<div class="w3-section">
-            <img class="mySlides" src="./assets/upload/banner/'.$dataBanner->foto.'" style="width:100%">
+          '
+          <div class="carousel-item active">
+            <img src="./assets/upload/banner/'.$dataBanner->foto.'" class="d-block mySlides" style="width:100%">
+            <div class="carousel-caption text-end">
+              <h1 style="width:px;">'.$dataBanner->nama.'</h1>
+              <h4>'.$dataBanner->deskripsi1.'</h4>
+              <h6>'.$dataBanner->deskripsi2.'</h6>
+            </div>
           </div>';
       }
   ?>
-<script>
-  var myIndex = 0;
-  carousel();
-
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-  }
-</script>
-
+  </div>
+</div>
 <section id="layanan">
   <div class="container">
     <div class="row my-4">
@@ -65,3 +54,19 @@
 </section>
 
 
+<script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("carousel-item");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 4000); // Change image every 2 seconds
+  }
+</script>

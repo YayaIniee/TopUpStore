@@ -1,10 +1,10 @@
 
 #myDIV {
   background: #faf2bd;
-  animation: mymove 6s infinite;
+  animation: bg-move 6s infinite;
 }
 
-@keyframes mymove {
+@keyframes bg-move {
   50% {background-color: rgb(252, 235, 142);}
 }
 /* navbar */
@@ -25,6 +25,9 @@
     color: black;
     font-weight: 400;
 }
+
+
+
 
 /* section game*/
 #layanan{
