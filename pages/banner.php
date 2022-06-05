@@ -1,71 +1,84 @@
-<?php
-    require_once('./class/class.Banner.php');
-    $objBanner = new Banner();
-    
-    if(isset($_POST['btnSubmit'])){
-        $objBanner->nama = $_POST['nama'];
-        $objBanner->deskripsi1 = $_POST['deskripsi1'];
-        $objBanner->deskripsi2 = $_POST['deskripsi2'];
-        $objBanner->currentfoto =$_POST['currentfoto'];	
-        $message = '';
+<?php 
 
-        if(isset($_GET['id'])){		
-            $objBanner->id = $_GET['id'];
-            $objBanner->UpdateBanner();
-        } else{
-            $objBanner->AddBanner();
-        }
-        if(!$objBanner->hasil){
-            echo "<script> alert('Proses gagal! Silakan ulangi!'); </script>";	
-		    die();
-        }
+require_once('./class/class.Banner.php'); 		
+$objBanner = new Banner(); 
 
-        $folder = './assets/upload/banner/';
-            //types that can be added
-            $file_type	= array('jpg','jpeg','png','gif','bmp');
-            $max_size	= 1000000; // 1MB	
-            $isErrorFile   = false;
-            $isSuccessUpload = true;
-        
-        if(!empty($_FILES['foto']['name'])){
-            $file_name = $_FILES['foto']['name'];
-            $file_size = $_FILES['foto']['size'];
-                //search for file extensions by using the explode function
-                $explode = explode('.',$file_name);
-                $extensi = $explode[count($explode)-1];
-            //check if the file type is correct
-            if(!in_array($extensi, $file_type)){
-                $isErrorFile = true;
-                $message .= 'ukuran file melebihi batas maksimum :p'; 
-            }
-
-            if($isErrorFile){
-                echo "<script> alert('$message'); </script>";
-            } else{
-                $objBanner->foto = $objBanner->id.'.'.$extensi;			
-                $isSuccessUpload = move_uploaded_file($_FILES['foto']['tmp_name'], $folder.$objBanner->foto);	
-                
-                if(!$isSuccessUpload){
-                    echo "<script> alert('Gagal uploud foto'); </script>";
-                    die();
-                }
-            }
-        }
-
-        if($isSuccessUpload){
-            $objBanner->UpdateFotoBanner();
-            if($objBanner->hasil){
-                echo "<script> alert('$objBanner->message'); </script>";
-                echo '<script> window.location = "index.php?p=bannerlist"; </script>';
-            } else
-                echo "<script> alert('Proses update gagal. Silakan ulangi'); </script>";
-        } else
-            echo "<script> alert('Proses upload gagal. Silakan ulangi'); </script>";
-    } else if(isset($_GET['id'])){
-        $objBanner->id = $_GET['id'];
-        $objBanner->SelectOneBanner();
-    }
+if(isset($_POST['btnSubmit'])){	
+    $objBanner->nama = $_POST['nama'];
+    $objBanner->deskripsi1 = $_POST['deskripsi1'];
+    $objBanner->deskripsi2 = $_POST['deskripsi2'];
+	$objBanner->currentfoto =$_POST['currentfoto'];	
+	$message = '';
+		
+	if(isset($_GET['id'])){		
+		$objBanner->id = $_GET['id'];
+		$objBanner->UpdateBanner();
+	}
+	else{
+		$objBanner->AddBanner();					
+	}	
+		
+	if(!$objBanner->hasil){			
+		echo "<script> alert('Proses gagal. Silakan ulangi'); </script>";	
+		die();
+	}
+	
+	$folder		= './assets/upload/banner/';
+		//type file yang bisa diupload
+	$file_type	= array('jpg','jpeg','png','gif','bmp');
+	$max_size	= 1000000; // 1MB	
+	$isErrorFile   = false;
+	$isSuccessUpload = true;
+	
+	if (!empty($_FILES['foto']['name'])) {	
+		$file_name	= $_FILES['foto']['name'];
+		$file_size	= $_FILES['foto']['size'];
+		//cari extensi file dengan menggunakan fungsi explode
+		$explode	= explode('.',$file_name);
+		$extensi	= $explode[count($explode)-1];
+		//check apakah type file sudah sesuai
+		if(!in_array($extensi,$file_type)){
+			$isErrorFile   = true;
+			$message .= 'Type file yang anda upload tidak sesuai';
+		}
+		if($file_size > $max_size){
+			$isErrorFile   = true;
+			$message .= 'Ukuran file melebihi batas maximum';
+		}	
+		
+		if($isErrorFile){
+			echo "<script> alert('$message'); </script>";
+		}
+		else{
+			$objBanner->foto = $objBanner->id.'.'.$extensi;			
+			$isSuccessUpload = move_uploaded_file($_FILES['foto']['tmp_name'], $folder.$objBanner->foto);	
+			
+			if(!$isSuccessUpload){
+				echo "<script> alert('Upload error'); </script>";
+				die();
+			}			
+		}
+	}
+		
+	if($isSuccessUpload){					 
+		$objBanner->UpdateFotoBanner();
+		if($objBanner->hasil){			
+			echo "<script> alert('$objBanner->message'); </script>";
+			echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=bannerlist">'; 				
+		}
+		else
+			echo "<script> alert('Proses update gagal. Silakan ulangi'); </script>";			
+	}
+	else
+		echo "<script> alert('Proses upload gagal. Silakan ulangi'); </script>";			
+				
+}
+else if(isset($_GET['id'])){	
+	$objBanner->id = $_GET['id'];	
+	$objBanner->SelectOneBanner();
+}
 ?>
+
 
 <section class="main-content">
     <div class="row">
@@ -74,7 +87,7 @@
 				if($objBanner->foto !='')
                     echo '<img src="./assets/upload/banner/'.$objBanner->foto.'" class="img-fluid"/>';
 				else
-					echo '<img src="./assets/upload/banner/default.PNG" class="img-fluid"/>'; 
+					echo '<img src="./assets/upload/banner/default.jpg" class="img-fluid"/>'; 
 			?>
         </div>
         <div class="col lg-7">

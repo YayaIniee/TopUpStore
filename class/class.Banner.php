@@ -1,16 +1,29 @@
 <?php 
-    class Banner extends Connection{
-        public $id =0;
-		public $nama = '';
-		public $deskripsi1 = '';
-        public $deskripsi2 = '';
-        public $foto = '';
-        public $currentfoto = '';
+	
+	class Banner extends Connection
+	{
+		private $id =0;
+		private $nama = '';
+		private $deskripsi1 = '';
+		private $deskripsi2 = '';
+        private $foto = '';
+        private $currentfoto = '';
+		private $hasil = false;
+		private $message ='';
 
-		public $hasil = false;
-		public $message ='';
-
-        public function AddBanner(){
+		public function __get($atribute) {
+			if (property_exists($this, $atribute)) {
+				return $this->$atribute;
+				}
+		}
+	
+		public function __set($atribut, $value){
+			if (property_exists($this, $atribut)) {
+					$this->$atribut = $value;
+			}
+		}
+				
+		public function AddBanner(){
 			$sql = "INSERT INTO banner(nama, deskripsi1, deskripsi2, foto) 
 		            values ('$this->nama', '$this->deskripsi1', '$this->deskripsi2', '$this->foto')";
 			$this->hasil = mysqli_query($this->connection, $sql);
@@ -22,10 +35,11 @@
 		    else
 			   $this->message ='Data gagal ditambahkan!';	
 		}
-        public function UpdateBanner(){
+		
+		public function UpdateBanner(){
 			$sql = "UPDATE banner SET nama ='$this->nama',
 					deskripsi1 = '$this->deskripsi1',
-                    deskripsi2 = '$this->deskripsi2',
+					deskripsi2 = '$this->deskripsi2',,
                     foto = '$this->foto'
 					WHERE id = $this->id";
 
@@ -36,6 +50,8 @@
 		    else
 			   $this->message ='Data gagal diubah!';	
 		}
+
+
         public function UpdateFotoBanner(){
 			$sql = "UPDATE banner SET 
                     foto = '$this->foto'
@@ -48,7 +64,8 @@
 		    else
 			   $this->message ='Data gagal diubah!';	
 		}
-        public function DeleteBanner(){
+		
+		public function DeleteBanner(){
 			$sql = "DELETE FROM banner WHERE id=$this->id";
 			$this->hasil = mysqli_query($this->connection, $sql);
 			
@@ -57,12 +74,13 @@
 		    else
 			   $this->message ='Data gagal dihapus!';	
 		}
-        public function SelectAllBanner(){
+		
+		public function SelectAllBanner(){
 			$sql = "SELECT * FROM banner";
 				
 			$result = mysqli_query($this->connection, $sql);	
 			$arrResult = Array();
-			$count=0;
+			$cnt=0;
 			if(mysqli_num_rows($result) > 0){				
 				while ($data = mysqli_fetch_array($result))
 				{
@@ -70,27 +88,26 @@
 					$objBanner->id=$data['id'];
 					$objBanner->nama=$data['nama'];
 					$objBanner->deskripsi1=$data['deskripsi1'];
-                    $objBanner->deskripsi2=$data['deskripsi2'];
+					$objBanner->deskripsi2=$data['deskripsi2'];
                     $objBanner->foto=$data['foto'];
-					$arrResult[$count] = $objBanner;
-					$count++;
+					$arrResult[$cnt] = $objBanner;
+					$cnt++;
 				}
 			}
 			return $arrResult;			
 		}
-        public function SelectOneBanner(){
+		
+		public function SelectOneBanner(){
 			$sql = "SELECT * FROM banner WHERE id='$this->id'";
 			$resultOne = mysqli_query($this->connection, $sql);	
 			if(mysqli_num_rows($resultOne) == 1){
 				$this->hasil = true;
 				$data = mysqli_fetch_assoc($resultOne);
 				$this->nama = $data['nama'];				
-				$this->deskripsi1 = $data['deskripsi1'];				
-                $this->deskripsi2 = $data['deskripsi2'];	
+				$this->deskripsi1 = $data['deskripsi1'];
+				$this->deskripsi2 = $data['deskripsi2'];			
                 $this->foto = $data['foto'];	
 			}							
 		}
-
-    }
-
+ 	}	 
 ?>
