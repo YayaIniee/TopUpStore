@@ -12,7 +12,7 @@
 		public $message ='';
 				
 		public function AddBanner(){
-			$sql = "INSERT INTO tblbanner(nama, deskripsi1, deskripsi2, foto) 
+			$sql = "INSERT INTO banner(nama, deskripsi1, deskripsi2, foto) 
 		            values ('$this->nama', '$this->deskripsi1', '$this->deskripsi2', '$this->foto')";
 			$this->hasil = mysqli_query($this->connection, $sql);
 
@@ -25,7 +25,7 @@
 		}
 		
 		public function UpdateBanner(){
-			$sql = "UPDATE tblbanner SET nama ='$this->nama',
+			$sql = "UPDATE banner SET nama ='$this->nama',
 					deskripsi1 = '$this->deskripsi1',
                     deskripsi2 = '$this->deskripsi2',
                     foto = '$this->foto'
@@ -41,7 +41,7 @@
 
 
         public function UpdateFotoBanner(){
-			$sql = "UPDATE tblbanner SET 
+			$sql = "UPDATE banner SET 
                     foto = '$this->foto'
 					WHERE id = $this->id";
 
@@ -54,7 +54,7 @@
 		}
 		
 		public function DeleteBanner(){
-			$sql = "DELETE FROM tblbanner WHERE id=$this->id";
+			$sql = "DELETE FROM banner WHERE id=$this->id";
 			$this->hasil = mysqli_query($this->connection, $sql);
 			
 			if($this->hasil)
@@ -64,7 +64,7 @@
 		}
 		
 		public function SelectAllBanner(){
-			$sql = "SELECT * FROM tblbanner";
+			$sql = "SELECT * FROM banner";
 				
 			$result = mysqli_query($this->connection, $sql);	
 			$arrResult = Array();
@@ -86,7 +86,7 @@
 		}
 		
 		public function SelectOneBanner(){
-			$sql = "SELECT * FROM tblbanner WHERE id='$this->id'";
+			$sql = "SELECT * FROM banner WHERE id='$this->id'";
 			$resultOne = mysqli_query($this->connection, $sql);	
 			if(mysqli_num_rows($resultOne) == 1){
 				$this->hasil = true;

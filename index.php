@@ -29,7 +29,7 @@ if (!isset($_SESSION)) {
     <link href="https://fonts.googleapis.com/css2?family=Goldman&family=Righteous&display=swap" rel="stylesheet">
     <!-- font-family: 'Goldman', cursive; font-family: 'Righteous', cursive; -->
   </head>
-  <body>
+  <body id="myDIV">
     <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light sticky-top mb-2">
     <div class="container">

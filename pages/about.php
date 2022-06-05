@@ -41,7 +41,7 @@
                         </div>
                     </div> <!-- single team -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6 "id="ryo">
                     <div class="single-team text-center mt-30">
                         <div class="team-image">
                             <img src="image/team/Ryo.jpg" alt="Team">

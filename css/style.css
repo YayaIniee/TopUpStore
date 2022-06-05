@@ -1,6 +1,5 @@
-body{
-    background:#f8f3d4;
-}
+
+
 /* navbar */
 .font-nav{
     font-family: 'Goldman', cursive;
@@ -9,6 +8,7 @@ body{
     font-weight: 400;
 }
 .navbar{
+  
     background-color: rgba(255, 215, 2, 1);
 }
 .nav-link.active{
@@ -61,6 +61,15 @@ body{
     font-family: 'Goldman', cursive;
 }
 /* About */
+#ryo{
+  animation: ryomove 6s infinite;
+}
+
+@keyframes ryomove {
+  50% {opacity: 0;}
+}
+
+
 
 @media (max-width: 767px) {
     .team-area {
