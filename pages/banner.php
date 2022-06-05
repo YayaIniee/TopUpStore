@@ -6,7 +6,7 @@ $objBanner = new Banner();
 if(isset($_POST['btnSubmit'])){	
     $objBanner->nama = $_POST['nama'];
     $objBanner->deskripsi1 = $_POST['deskripsi1'];
-    $objBanner->deskripsi2 = $_POST['deskripsi2'];
+	$objBanner->deskripsi2 = $_POST['deskripsi2'];
 	$objBanner->currentfoto =$_POST['currentfoto'];	
 	$message = '';
 		
@@ -67,7 +67,7 @@ if(isset($_POST['btnSubmit'])){
 			echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=bannerlist">'; 				
 		}
 		else
-			echo "<script> alert('Proses update gagal. Silakan ulangi'); </script>";			
+			echo "<script> alert('Proses update gagal. Silakan ulangi'); </script>";		
 	}
 	else
 		echo "<script> alert('Proses upload gagal. Silakan ulangi'); </script>";			
@@ -79,53 +79,56 @@ else if(isset($_GET['id'])){
 }
 ?>
 
-
-<section class="main-content">
-    <div class="row">
-        <div class="col-lg-5">
-            <?php 
-				if($objBanner->foto !='')
-                    echo '<img src="./assets/upload/banner/'.$objBanner->foto.'" class="img-fluid"/>';
-				else
-					echo '<img src="./assets/upload/banner/default.jpg" class="img-fluid"/>'; 
-			?>
-        </div>
-        <div class="col lg-7">
-            <h4 class="title">
-                <span class="text">
-                    <strong>Banner</strong>
-                </span>
-            </h4>
-            <form action="" method="POST">
-                <table class="table">
-                    <tr>
-                        <td>Nama</td>
-                        <td>:</td>
-                        <td><input type="text" class="form-control" id="nama" name="nama" value="<?php echo $objBanner->nama; ?>"></td>
-                    </tr>
-                    <tr>
-                        <td>Deskripsi1</td>
-                        <td>:</td>
-                        <td><input type="text" class="form-control" id="deskripsi1" name="deskripsi1" value="<?php echo $objBanner->deskripsi1; ?>"></td></td>
-                    </tr>
-                    <tr>
-                        <td>Deskripsi2</td>
-                        <td>:</td>
-                        <td><input type="text" class="form-control" id="deskripsi2" name="deskripsi2" value="<?php echo $objBanner->deskripsi2; ?>"></td></td>
-                    </tr>
-                    <tr>
-                        <td>Upload Foto</td>
-                        <td>:</td>
-                        <td><input type="file" class="form-control" id="foto" name="foto"><input type="hidden" name="currentfoto" value="<?php echo $objBanner->foto; ?>"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td><input type="submit" class="btn btn-success" value="Save" name="btnSubmit">
-                            <a href="index.php?p=bannerlist" class="btn btn-warning text-white">Cancel</a></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-    </div>
-</section>
+<section class="main-content">				
+	<div class="row">						
+		<div class="span12">
+			<div class="row">
+				<div class="span3">
+				<br/>
+					<?php 
+						if($objBanner->foto !='')
+							echo "<img src='./assets/upload/banner/".$objBanner->foto."' width='300px' height='350px'/>"; 
+						else
+							echo "<img src='./assets/upload/banner/default.jpg' width='300px' height='350px'/>"; 
+					?>								
+				</div>
+				<div class="span6">
+				<h4 class="title"><span class="text"><strong>BANNER</strong></span></h4>
+				<form action="" method="post" enctype="multipart/form-data">
+					<table class="table" border="0">
+					<tr>
+					<td>Nama</td>
+					<td>:</td>
+					<td><input type="text" class="form-control" id="nama" name="nama" value="<?php echo $objBanner->nama; ?>"></td>
+					</tr>
+					<tr>
+					<td>Deskripsi1</td>
+					<td>:</td>
+					<td><input type="text" class="form-control" id="deskripsi1" name="deskripsi1" value="<?php echo $objBanner->deskripsi1; ?>"></td>
+					</tr>
+					<tr>
+					<td>Deskripsi2</td>
+					<td>:</td>
+					<td><input type="text" class="form-control" id="deskripsi2" name="deskripsi2" value="<?php echo $objBanner->deskripsi2; ?>"></td>
+					</tr>
+					<tr>
+					<td>Upload Foto</td>
+					<td>:</td>
+					<td><input type="file" class="form-control" id="foto" name="foto">
+						<input type="hidden" name="currentfoto" value="<?php echo $objBanner->foto; ?>">	
+					</td>
+					</tr>		
+					<tr>
+					<td></td>
+					<td></td>
+					<td><input type="submit" class="btn btn-primary" value="Save" name="btnSubmit">
+						<a href="index.php?p=bannerlist" class="btn btn-primary">Cancel</a></td>
+					</tr>	
+					</table>    
+				</form>		
+				</div>							
+			</div>						
+		</div>		
+	</div>
+</section>			
+	

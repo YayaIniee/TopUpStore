@@ -10,7 +10,7 @@
       foreach($arrayResult as $dataBanner){
         echo '
               <div class="carousel-item active">
-                <img src="./assets/upload/banner/'.$objBanner->foto.'" class="d-block w-100" alt="...">
+                <img src="./assets/upload/banner/'.$dataBanner->foto.'" class="d-block w-100" alt="...">
               </div>
         
               ';
