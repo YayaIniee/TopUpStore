@@ -55,6 +55,9 @@ if (!isset($_SESSION)) {
           <li class="nav-item">
             <a href="index.php?p=voucherlist" class="nav-link font-nav">Voucher</i></a>
           </li>
+          <li class="nav-item">
+            <a href="index.php?p=banner" class="nav-link font-nav">Banner</i></a>
+          </li>
 
         </ul>
         <form class="">
