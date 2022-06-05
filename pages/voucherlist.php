@@ -43,7 +43,6 @@
                         <a href="index.php?p=deletevoucher&id='.$dataVoucher->id.'" class="btn btn-danger" onclick="return confirm(\'Apakah anata yakin ingin menghapus?\')">Delete</a></td>';
                 echo'</tr>';
                 $no++;
-                
             }   
         }
     ?>
