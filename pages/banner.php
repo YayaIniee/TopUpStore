@@ -69,15 +69,15 @@
 
 <section class="main-content">
     <div class="row">
-        <div class="col-lg-6"> //spaces for banner's foto
+        <div class="col-lg-5">
             <?php 
 				if($objBanner->foto !='')
-					echo "<img src='./assets/upload/banner/".$objBanner->foto."'/>"; 
+                    echo '<img src="./assets/upload/banner/'.$objBanner->foto.'" class="img-fluid"/>';
 				else
-					echo "<img src='./assets/upload/banner/default.jpg'/>"; 
+					echo '<img src="./assets/upload/banner/default.PNG" class="img-fluid"/>'; 
 			?>
         </div>
-        <div class="col lg-6">
+        <div class="col lg-7">
             <h4 class="title">
                 <span class="text">
                     <strong>Banner</strong>
