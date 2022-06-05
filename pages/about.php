@@ -18,7 +18,7 @@
                             <h4 class="">Ahmad Nur Hidaya</h4>
                             <span class="sub-title">2010130002</span>
                             <ul class="social mt-4">
-                                <li><a href="https://www.instagram.com/ya2_inie/"><i class="lni-instagram-original"></i></a></li>
+                                <li><a href="https://www.instagram.com/ya2_inie/"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-twitter-original"></i></a></li>
                             </ul>
