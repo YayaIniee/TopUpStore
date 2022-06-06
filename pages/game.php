@@ -4,6 +4,7 @@
     if(isset($_POST['btnSubmit'])){
         $objGame->id = $_POST['id'];
         $objGame->nama = $_POST['nama'];
+        $objGame->deskripsi = $_POST['deskripsi'];
 
 
             if (isset($_GET['id'])) {
@@ -37,7 +38,8 @@
         <tr>
             <td>Deskripsi</td>
             <td>:</td>
-            <td><textarea name="deskripsi" id="" cols="30" rows="" value="<?php echo $objGame->deskripsi; ?>"></textarea></td>
+            <td><textarea name="deskripsi" class="form-control" rows="3" cols="19">
+	            <?php echo $objGame->deskripsi; ?></textarea></td>
         </tr>
         <tr>
             <td colspan="2"></td>

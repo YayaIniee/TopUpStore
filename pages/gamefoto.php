@@ -72,7 +72,7 @@
                      if($objGame->foto != '')
                      echo '<img src="./assets/upload/game/'.$objGame->foto.'" class="img-fluid" width="100px" heigth="100px"/>';
                         else
-					    echo '<img src="./assets/upload/banner/default.PNG" class="img-fluid"/>'; 
+					    echo '<img src="./assets/upload/game/default.PNG" width="150"/>'; 
                     ?>
                     </td>
             </tr>

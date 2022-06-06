@@ -3,7 +3,7 @@
     class Game extends Connection{
         public $id ='';
         public $nama ='';
-        public $deskripsi;
+        public $deskripsi ='';
         public $foto ='';
 
         public $hasil = false;
@@ -11,7 +11,7 @@
     
     public function AddGame(){
 			$sql = "INSERT INTO game (id, nama, deskripsi)
-                    VALUES ('$this->id', '$this->nama', '$this->deskripsi)";
+                    VALUES ('$this->id', '$this->nama', '$this->deskripsi')";
             $this->hasil = mysqli_query($this->connection, $sql);
 
             if($this->hasil)

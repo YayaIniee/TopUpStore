@@ -18,7 +18,7 @@
         </div>
         <div class="col-12">
         <b><?php echo $objGame->nama; ?></b><br>
-        Detail atau deskripsi game
+        <?php echo $objGame->deskripsi; ?>
         </div>
         <hr class="d-sm">
     </div>
