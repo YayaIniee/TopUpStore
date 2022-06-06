@@ -10,6 +10,7 @@
             <th>No</th>
             <th>ID</th>
             <th>Nama Game</th>
+            <th>Deskripsi</th>
             <th>Genre</th>
             <th>Foto</th>
             <th>Action</th>
@@ -28,6 +29,7 @@
                 echo    '<td>'.$no.'</td>';
                 echo    '<td>'.$dataGame->id.'</td>';
                 echo    '<td>'.$dataGame->nama.'</td>';
+                echo    '<td>'.$dataGame->deskripsi.'</td>';
                 echo    '<td></td>';
                 echo    "<td><img src='./assets/upload/game/".$dataGame->foto."' width='50px' height='50px'/></td>";
                 echo    '<td><a href="index.php?p=game&id='.$dataGame->id.'" class="btn btn-warning">Edit</a> | 

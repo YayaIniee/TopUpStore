@@ -92,9 +92,6 @@
 @keyframes ryomove {
   50% {opacity: 0;}
 }
-
-
-
 @media (max-width: 767px) {
     .team-area {
       padding-top: 75px;

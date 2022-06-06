@@ -3,14 +3,15 @@
     class Game extends Connection{
         public $id ='';
         public $nama ='';
+        public $deskripsi;
         public $foto ='';
 
         public $hasil = false;
         public $message = '';
     
     public function AddGame(){
-			$sql = "INSERT INTO game (id, nama)
-                    VALUES ('$this->id', '$this->nama')";
+			$sql = "INSERT INTO game (id, nama, deskripsi)
+                    VALUES ('$this->id', '$this->nama', '$this->deskripsi)";
             $this->hasil = mysqli_query($this->connection, $sql);
 
             if($this->hasil)
@@ -19,7 +20,8 @@
                 $this->message='Data gagal ditambahkan';
         }		
     public function UpdateGame(){
-            $sql = "UPDATE game SET nama = '$this->nama'
+            $sql = "UPDATE game SET nama = '$this->nama',
+                    deskripsi = '$this->deskripsi'
                     WHERE id = $this->id";
             $this->hasil = mysqli_query($this->connection, $sql);
             
@@ -58,6 +60,7 @@
                     $objGame = new Game();
                     $objGame->id=$data['id'];
                     $objGame->nama=$data['nama'];
+                    $objGame->deskripsi=$data['deskripsi'];
                     $objGame->foto=$data['foto'];
                     $arrResult[$count] = $objGame;
                     $count++;
@@ -73,6 +76,7 @@
                 $this->hasil = true;
                 $data = mysqli_fetch_assoc($resultOne);
                 $this->nama = $data['nama'];
+                $this->deskripsi = $data['deskripsi'];
                 $this->foto = $data['foto'];
             }
         }

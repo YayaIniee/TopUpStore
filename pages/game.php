@@ -35,6 +35,11 @@
             <td><input type="text" class="form-control" id="nama" name="nama" value="<?php echo $objGame->nama; ?>"></td>
         </tr>
         <tr>
+            <td>Deskripsi</td>
+            <td>:</td>
+            <td><textarea name="deskripsi" id="" cols="30" rows="" value="<?php echo $objGame->deskripsi; ?>"></textarea></td>
+        </tr>
+        <tr>
             <td colspan="2"></td>
             <td><input type="submit" class="btn btn-success" value="Save" name="btnSubmit">
                  <a href="index.php?p=gamelist" class="btn btn-warning text-white">Cancel</a></td>

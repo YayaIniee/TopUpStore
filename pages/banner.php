@@ -84,7 +84,6 @@ else if(isset($_GET['id'])){
 		<div class="col-5 mt-5">
 			<?php 
 				if($objBanner->foto !='')
-					/* '<img src="./assets/upload/banner/'.$objBanner->foto.'" class="img-fluid"/>' */
 					echo '<img src="./assets/upload/banner/'.$objBanner->foto.'" class="img-fluid mt-3"/>'; 
 				else
 					echo '<img src="./image/default.png" class="img-fluid"/>'; 
