@@ -15,10 +15,16 @@
                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
             </div>
 
-            <label for="email" class="form-label">Password:</label>
+            <label for="pswd" class="form-label">Password:</label>
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class='fas fa-key'></i></span>
                 <input type="password" class="form-control" placeholder="password" name="pswd">
+            </div>
+
+            <label for="re-type pswd" class="form-label">Re-Type Password:</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text"><i class='fas fa-retweet'></i></span>
+                <input type="password" class="form-control" placeholder="re-type password" name="re=type pswd">
             </div>
             <button class="btn btn-warning shadow fnt" type="submit">Sing Up</button>
         </form>
