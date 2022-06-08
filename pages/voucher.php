@@ -64,7 +64,7 @@
 					<td><input type="text" class="form-control" id="nama" name="nama" value="<?php echo $objVoucher->nama; ?>"></td>
 				</tr>	
 					<tr>
-					<td>nominal</td>
+					<td>Nominal</td>
 					<td>:</td>
 					<td><input type="text" class="form-control" id="nominal" name="nominal" value="<?php echo $objVoucher->nominal; ?>"></td>
 				</tr>	
