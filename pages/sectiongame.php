@@ -1,7 +1,7 @@
 
 <?php
   if(isset($_GET['id'])){	
-		require_once('./class/class.Game.php'); 
+		require_once('./class/class.Game.php');
 		$objGame = new Game(); 
 		$objGame->id = $_GET['id'];	
 		$objGame->SelectOneGame();

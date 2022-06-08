@@ -143,7 +143,7 @@ if (!isset($_SESSION)) {
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright text-center">
-                            <p>Copyrigth 2022 | CS Perdjuangan </p>
+                            <p>Copyrigth <span class="fas fa-copyright"></span> 2022 | CS Perdjuangan </p>
                         </div> <!-- copyright -->
                     </div>
                 </div> <!-- row -->
