@@ -113,7 +113,6 @@ if (!isset($_SESSION)) {
                               <li class="mt-2"><span class="fa-li"><i class="fas fa-home"></i></span><a style="text-decoration:none;" href="index.php" class="text-body">Homepage</a></li>
                               <li class="mt-2"><span class="fa-li"><i class="fas fa-address-book"></i></span><a style="text-decoration:none;" href="index.php?p=about" class="text-body">About Us</a></li>
                               <li class="mt-2"><span class="fa-li"><i class="fas fa-atlas"></i></span><a style="text-decoration:none;" href="index.php?p=contact" class="text-body">Contac Us</a></li>
-                              <li class="mt-2"><span class="fa-li"><i class="fas fa-home"></i></span><a style="text-decoration:none;" href="index.php?=formbeli" class="text-body">Form Beli</a></li>
                               
                             </ul>
                         </div>
