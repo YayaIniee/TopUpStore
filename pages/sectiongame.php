@@ -4,7 +4,7 @@
 		require_once('./class/class.Game.php');
 		$objGame = new Game(); 
 		$objGame->id = $_GET['id'];	
-		$objGame->SelectOneGame();
+		$objGame->SelectOneGame();  
 	}
 
 ?>

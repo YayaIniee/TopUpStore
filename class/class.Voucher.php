@@ -1,27 +1,15 @@
-<<?php 
+<?php 
 		
         class Voucher extends Connection
         {
-            private $id =0;
-            private $nama = '';
-            private $nominal = '';
-            private $harga ='';
-            private $idgame =0;
-            private $namagame ='';
-            private $hasil = false;
-            private $message ='';
-    
-            public function __get($atribute) {
-                if (property_exists($this, $atribute)) {
-                    return $this->$atribute;
-                    }
-            }
-        
-            public function __set($atribut, $value){
-                if (property_exists($this, $atribut)) {
-                        $this->$atribut = $value;
-                }
-            }
+            public $id =0;
+            public $nama = '';
+            public $nominal = '';
+            public $harga ='';
+            public $idgame =0;
+            public $namagame ='';
+            public $hasil = false;
+            public $message ='';
                         
             public function AddVoucher(){
                 $sql = "INSERT INTO voucher(nama, nominal, idgame, harga) 

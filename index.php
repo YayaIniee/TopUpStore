@@ -41,13 +41,6 @@ if (!isset($_SESSION)) {
         <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a href="index.php" class="nav-link font-nav active" aria-current="page">HOME</i></a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?p=about" class="nav-link font-nav">About</i></a>
-          </li>
-          <li class="nav-item">
-            <a href="index.php?p=contact" class="nav-link font-nav">Contact</i></a>
-          </li>
           <li class="nav-item">
             <a href="index.php?p=gamelist" class="nav-link font-nav">Game</i></a>
           </li>
@@ -120,6 +113,8 @@ if (!isset($_SESSION)) {
                               <li class="mt-2"><span class="fa-li"><i class="fas fa-home"></i></span><a style="text-decoration:none;" href="index.php" class="text-body">Homepage</a></li>
                               <li class="mt-2"><span class="fa-li"><i class="fas fa-address-book"></i></span><a style="text-decoration:none;" href="index.php?p=about" class="text-body">About Us</a></li>
                               <li class="mt-2"><span class="fa-li"><i class="fas fa-atlas"></i></span><a style="text-decoration:none;" href="index.php?p=contact" class="text-body">Contac Us</a></li>
+                              <li class="mt-2"><span class="fa-li"><i class="fas fa-home"></i></span><a style="text-decoration:none;" href="index.php?=formbeli" class="text-body">Form Beli</a></li>
+                              
                             </ul>
                         </div>
                     </div>
@@ -143,7 +138,7 @@ if (!isset($_SESSION)) {
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright text-center">
-                            <p>Copyrigth <span class="fas fa-copyright"></span> 2022 | CS Perdjuangan </p>
+                            <p>Copyrigth <span class="fas fa-copyright">  </span> 2022 | CS Perdjuangan </p>
                         </div> <!-- copyright -->
                     </div>
                 </div> <!-- row -->
