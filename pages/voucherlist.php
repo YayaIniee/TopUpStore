@@ -37,9 +37,9 @@
 							echo '<td>'.$dataVoucher->nominal.'</td>';
 							echo '<td>'.$dataVoucher->nama.'</td>';
 							echo '<td>Rp '.number_format($dataVoucher->harga,2,',','.').'</td>';
-							echo '<td><a class="btn btn-warning"  href="index.php?p=voucher&id='.$dataVoucher->id.'">Edit</a> |
+							echo '<td><a class="btn btn-warning"  href="index.php?p=voucher&id='.$dataVoucher->id.'"><i class="fas fa-edit"></i></a> |
 									<a class="btn btn-danger"  href="index.php?p=deletevoucher&id='.$dataVoucher->id.'" 
-									onclick="return confirm(\'Apakah anata yakin ingin menghapus?\')">Delete</a> ';
+									onclick="return confirm(\'Apakah anata yakin ingin menghapus?\')"><i class="fas fa-eraser"></i></a>';
 						echo '</tr>';
 						$no++;
 					}

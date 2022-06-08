@@ -7,8 +7,7 @@
   <br>  
 <table class="table">
 	<tr>
-	<th>No.</th>
-	<th>ID Banner</th>
+	<th>#</th>
 	<th>Nama</th>	
 	<th>Deskripsi 1</th>
     <th>Deskripsi 2</th>
@@ -26,15 +25,14 @@
 			$no = 1;	
 			foreach ($arrayResult as $dataBanner) {
 				echo '<tr>';
-					echo '<td>'.$no.'</td>';	
-					echo '<td>'.$dataBanner->id.'</td>';	
-					echo '<td>'.$dataBanner->nama.'</td>';
-					echo '<td>'.$dataBanner->deskripsi1.'</td>';
-                    echo '<td>'.$dataBanner->deskripsi2.'</td>';
+					echo '<td>'.$no.'</td>';
+					echo '<td class="col-1">'.$dataBanner->nama.'</td>';
+					echo '<td class="col-2">'.$dataBanner->deskripsi1.'</td>';
+                    echo '<td class="col-4">'.$dataBanner->deskripsi2.'</td>';
 					echo "<td><img src='./assets/upload/banner/".$dataBanner->foto."' width='100px' height='50px'/></td>";
-					echo '<td><a class="btn btn-warning"  href="index.php?p=banner&id='.$dataBanner->id.'">Edit</a> |
+					echo '<td><a class="btn btn-warning"  href="index.php?p=banner&id='.$dataBanner->id.'"><i class="fas fa-edit"></i></a> |
    					          <a class="btn btn-danger"  href="index.php?p=deletebanner&id='.$dataBanner->id.'" 
-							  onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')">Delete</a></td>';	
+							  onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')"><i class="fas fa-eraser"></i></a></td>';	
 				echo '</tr>';
 				
 				$no++;	

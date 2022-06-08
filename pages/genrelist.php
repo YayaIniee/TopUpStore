@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-3 col-lg-12">
     <h4 class="title">
         <span class="text">
             <strong>Genre List</strong>
@@ -7,7 +7,7 @@
     <a href="index.php?p=genre" class="btn btn-success my-3">Add</a>
     <table class="table" border="0">
         <tr>
-            <th>No</th>
+            <th>#</th>
             <th>ID</th>
             <th>Nama Genre</th>
             <th>Action</th>
@@ -26,8 +26,8 @@
                 echo    '<td>'.$no.'</td>';
                 echo    '<td>'.$dataGenre->id.'</td>';
                 echo    '<td>'.$dataGenre->genre.'</td>';
-                echo    '<td><a href="index.php?p=genre&id='.$dataGenre->id.'" class="btn btn-warning">Edit</a> | 
-                        <a href="index.php?p=deletegenre&id='.$dataGenre->id.'" class="btn btn-danger" onclick="return confirm(\'Apakah anata yakin ingin menghapus?\')">Delete</a>';
+                echo    '<td><a href="index.php?p=genre&id='.$dataGenre->id.'" class="btn btn-warning"><i class="fas fa-edit"></i></a> | 
+                        <a href="index.php?p=deletegenre&id='.$dataGenre->id.'" class="btn btn-danger" onclick="return confirm(\'Apakah anata yakin ingin menghapus?\')"><i class="fas fa-eraser"></i></a>';
                 echo'</tr>';
                 $no++;
             }   
