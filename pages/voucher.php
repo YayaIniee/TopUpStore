@@ -66,7 +66,7 @@
 					<tr>
 					<td>nominal</td>
 					<td>:</td>
-					<td><input type="text" class="form-control" id="nominal" name="nominal"><?php echo $objVoucher->nominal; ?></td>
+					<td><input type="text" class="form-control" id="nominal" name="nominal" value="<?php echo $objVoucher->nominal; ?>"></td>
 				</tr>	
 				<tr>
 					<td>Harga</td>
