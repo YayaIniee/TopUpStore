@@ -2,34 +2,23 @@
 	
 	class Member extends Connection
 	{
-		private $idmember='';
-		private $fname = '';
-		private $minit = '';
-		private $lname = '';
-		private $address = '';
-		private $bdate = '';
-		private $sex = '';
-		private $userid=0;
-		private $foto='';
-		private $hasil = false;
-		private $message ='';
+		public $idmember='';
+		public $fname = '';
+		public $minit = '';
+		public $lname = '';
+		public $alamat = '';
+		public $tgllahir = '';
+		public $jeniskelamin = '';
+		public $userid=0;
+		public $foto='';
+		public $hasil = false;
+		public $message ='';
 
-		public function __get($atribute) {
-			if (property_exists($this, $atribute)) {
-				return $this->$atribute;
-			}
-		}
-		
-		public function __set($atribut, $value){
-			if (property_exists($this, $atribut)) {
-							$this->$atribut = $value;
-			}
-		}
 		
 		
 		public function AddMember(){
-			$sql = "INSERT INTO member (idmember,  fname, minit, lname, address, bdate, sex)
-				   VALUES ('$this->idmember', '$this->fname', '$this->minit', '$this->lname', '$this->address', '$this->bdate', '$this->sex')";
+			$sql = "INSERT INTO member (idmember,  fname, minit, lname, alamat, tgllahir, jeniskelamin)
+				   VALUES ('$this->idmember', '$this->fname', '$this->minit', '$this->lname', '$this->alamat', '$this->tgllahir', '$this->jeniskelamin')";
 			$this->hasil = mysqli_query($this->connection, $sql);
 			
 			
@@ -44,9 +33,9 @@
 			        SET fname ='$this->fname',
 					minit = '$this->minit',
 					lname = '$this->lname',					
-					address = '$this->address',
-					bdate = '$this->bdate',
-					sex = '$this->sex',
+					alamat = '$this->alamat',
+					tgllahir = '$this->tgllahir',
+					jeniskelamin = '$this->jeniskelamin',
 					foto = '$this->foto'
 					WHERE idmember = '$this->idmember'";
 					
@@ -58,11 +47,6 @@
 			else
 				$this->message ='Data gagal diubah!';								
 		}
-
-		
-		
-		   
-		  
 		
 		public function DeleteMember(){
 			$sql = "DELETE FROM Member WHERE idmember='$this->idmember'";
@@ -122,34 +106,7 @@
 			}
 			return $arrResult;			
 		}
-		
-		public function SelectAllMemberInDepartment($dnumber){					
-			$sql = "SELECT * FROM v_member where dno = $dnumber order by fname";			
-			$result = mysqli_query($this->connection, $sql);	
 			
-			$arrResult = Array();
-			$cnt=0;
-			if(mysqli_num_rows($result) > 0){				
-				while ($data = mysqli_fetch_array($result))
-				{
-					$objMember = new Member(); 
-					$objMember->idmember=$data['idmember'];
-					$objMember->fname=$data['fname'];
-					$objMember->minit=$data['minit'];
-					$objMember->lname=$data['lname'];
-					$objMember->bdate=$data['bdate'];
-					$objMember->address=$data['address'];
-					$objMember->sex=$data['sex'];
-					$objMember->foto=$data['foto'];
-					$arrResult[$cnt] = $objMember;
-					$cnt++;
-				}
-			}
-			return $arrResult;			
-		}
-
-		
-		
 		public function SelectOneMember(){
 			$sql = "SELECT * FROM v_member WHERE idmember='$this->idmember'";
 			
