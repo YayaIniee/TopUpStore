@@ -1,4 +1,5 @@
 <?php 
+	require_once "authorization_admin.php";
 	require_once('./class/class.Game.php'); 
 	require_once('./class/class.Voucher.php'); 
 	$objVoucher = new Voucher(); 

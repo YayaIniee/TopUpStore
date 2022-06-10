@@ -3,7 +3,7 @@ class Connection{
    private $host = "localhost";
    private $struser = "root";
    private $strpassword = "";
-   private $strdbname = "test1";
+   private $strdbname = "topupstore";
    
    public $connection;
       

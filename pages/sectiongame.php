@@ -1,12 +1,17 @@
 
 <?php
+if(isset($_GET['id'])){	
+  require_once('./class/class.Game.php');
+  $objGame = new Game(); 
+  $objGame->id = $_GET['id'];	
+  $objGame->SelectOneGame();  
+}
   if(isset($_GET['id'])){	
-		require_once('./class/class.Game.php');
-		$objGame = new Game(); 
-		$objGame->id = $_GET['id'];	
-		$objGame->SelectOneGame();  
+		require_once('./class/class.Voucher.php');
+		$objVoucher = new Voucher(); 
+		$objVoucher->id = $_GET['id'];	
+		$objVoucher->SelectOneVoucher();  
 	}
-
 ?>
 <div class="container">
   <div class="row">

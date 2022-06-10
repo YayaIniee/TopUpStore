@@ -1,13 +1,7 @@
 <?php 
-if(!isset($_SESSION)){
+if (!isset($_SESSION)) {
   session_start();
-}
-if(isset($_SESSION["role"])){		
-		if($_SESSION["role"] == 'member')
-			echo '<script>window.location = "dashboardmember.php";</script>';
-		else if($_SESSION["role"] == 'admin')
-			echo '<script>window.location = "dashboardadmin.php";</script>';
-	}	
+} require_once ('pages/authorization_admin.php');
   require "inc.koneksi.php";
 ?>
 
@@ -39,25 +33,30 @@ if(isset($_SESSION["role"])){
     <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light mb-2">
     <div class="container">
-      <a class="navbar-brand font-nav" href="index.php"><img src="image/icon.png" width="50px" alt="">Top Up Games</a>
+      <a class="navbar-brand font-nav" href="dashboardadmin.php"><img src="image/icon.png" width="50px" alt="">Top Up Games</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a href="index.php" class="nav-link font-nav active" aria-current="page">HOME</i></a>
-         </li>
-         <li class="nav-item">
-            <a href="index.php?p=about" class="nav-link font-nav active" aria-current="page">About</i></a>
-         </li>
-         <li class="nav-item">
-            <a href="index.php?p=contact" class="nav-link font-nav active" aria-current="page">Contact</i></a>
-         </li>
+            <a href="dashboardadmin.php" class="nav-link font-nav active" aria-current="page">HOME</i></a>
+          <li class="nav-item">
+            <a href="dashboardadmin.php?p=gamelist" class="nav-link font-nav">Game</i></a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboardadmin.php?p=genrelist" class="nav-link font-nav">Genre</i></a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboardadmin.php?p=voucherlist" class="nav-link font-nav">Voucher</i></a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboardadmin.php?p=bannerlist" class="nav-link font-nav">Banner</i></a>
+          </li>
+
         </ul>
         <form class="">
-          <a href="index.php?p=register" class="btn font-nav btn-sm" type="submit">Sing Up</a>
-          <a href="index.php?p=login" class="btn btn-outline-dark font-nav btn-sm" type="submit">Sing In</a>
+          <a href="dashboardadmin.php?p=logout" class="btn font-nav btn-sm" type="submit">Logout</a>
         </form>
       </div>
     </div>
@@ -110,9 +109,9 @@ if(isset($_SESSION["role"])){
                                 <h4 class="title">Navigation</h4>
                             </div>
                             <ul class="fa-ul">
-                              <li class="mt-2"><span class="fa-li"><i class="fas fa-home"></i></span><a style="text-decoration:none;" href="index.php" class="text-body">Homepage</a></li>
-                              <li class="mt-2"><span class="fa-li"><i class="fas fa-address-book"></i></span><a style="text-decoration:none;" href="index.php?p=about" class="text-body">About Us</a></li>
-                              <li class="mt-2"><span class="fa-li"><i class="fas fa-atlas"></i></span><a style="text-decoration:none;" href="index.php?p=contact" class="text-body">Contac Us</a></li>
+                              <li class="mt-2"><span class="fa-li"><i class="fas fa-home"></i></span><a style="text-decoration:none;" href="dashboardadmin.php" class="text-body">Homepage</a></li>
+                              <li class="mt-2"><span class="fa-li"><i class="fas fa-address-book"></i></span><a style="text-decoration:none;" href="dashboardadmin.php?p=about" class="text-body">About Us</a></li>
+                              <li class="mt-2"><span class="fa-li"><i class="fas fa-atlas"></i></span><a style="text-decoration:none;" href="dashboardadmin.php?p=contact" class="text-body">Contac Us</a></li>
                               
                             </ul>
                         </div>
@@ -122,10 +121,6 @@ if(isset($_SESSION["role"])){
                             <div class="f-title">
                                 <h4 class="title">My Account</h4>
                             </div>
-                            <ul class="fa-ul">
-                              <li class="mt-2"><span class="fa-li"><i class="fas fa-address-card"></i></span><a style="text-decoration:none;" href="index.php?p=profile" class="text-body">My Account</a></li>
-                              <li class="mt-2"><span class="fa-li"><i class="fas fa-history"></i></span><a style="text-decoration:none;" href="index.php?p=history" class="text-body">Order History</a></li>
-                            </ul>
                         </div>
                     </div>
 					

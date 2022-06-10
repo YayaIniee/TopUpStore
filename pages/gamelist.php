@@ -7,7 +7,7 @@
     <a href="index.php?p=game" class="btn btn-success my-3">Add</a>
     <table class="table" border="0">
         <tr>
-            <th>No</th>
+            <th>#</th>
             <th>ID</th>
             <th>Nama Game</th>
             <th>Deskripsi</th>
