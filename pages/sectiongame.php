@@ -1,5 +1,8 @@
 
 <?php
+if (!isset($_SESSION)) {
+  session_start();
+}
 if(isset($_GET['id'])){	
   require_once('./class/class.Game.php');
   $objGame = new Game(); 
@@ -68,35 +71,27 @@ if(isset($_GET['id'])){
             </div> <!-- card -->
           </div>
           <div class="col-12 mb-3"> <!-- Button beli -->
-            <button type="button" id="beli" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#myModal">Beli Sekarang</button>
-          <!-- The Modal -->
-          <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-          
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">Pembelian</h4>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-          
-                <!-- Modal body -->
-                <div class="modal-body">
-                </div>
-          
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                  <a href="chekout.html" class="btn btn-success">Beli Sekarang</a>
-                </div>
-          
-              </div>
-            </div>
+                <?php
+                    if(isset($_SESSION["role"])){
+                      if($_SESSION["role"] == "admin"){
+                  ?>
+                        <button type="button" id="beli" class="btn btn-warning disabled">Beli Sekarang</button>
+                  <?php
+                      } else{
+                  ?>    
+                        <button type="button" id="beli" class="btn btn-warning">Beli Sekarang</button>
+                  <?php    
+                      } 
+                  
+                    } else {
+                  ?>
+                      <button type="button" id="beli" class="btn btn-warning disabled">Beli Sekarang</button>
+                  <?php
+                    }
+                  ?>        
           </div>
-
-            
+            </div>            
           </div> <!-- col-12 mb-3 -->
-
         </div> <!-- row -->
       </form>
     </div> <!-- col-md-12 col-sm-12 col-lg-8 -->

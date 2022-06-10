@@ -21,7 +21,7 @@
 				
 		if($objVoucher->hasil){
 			echo "<script> alert('".$objVoucher->message."'); </script>";
-			echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=voucherlist">'; 				
+			echo '<META HTTP-EQUIV="Refresh" Content="0; URL=dashboardadmin.php?p=voucherlist">'; 				
 		}
 		else{
 			echo "<script> alert('Proses gagal. Silakan ulangi'); </script>";	
@@ -78,7 +78,7 @@
 					<td></td>
 					<td></td>
 					<td><input type="submit" class="btn btn-success" value="Save" name="btnSubmit">
-						<a href="index.php?p=voucherlist" class="btn btn-danger">Cancel</a></td>
+						<a href="dashboardadmin.php?p=voucherlist" class="btn btn-danger">Cancel</a></td>
 				</tr>	
 			</table>    
 		</form>	

@@ -1,17 +1,17 @@
 <?php 
-if (!isset($_SESSION)) {
-  session_start();
-} require_once ('pages/authorization_admin.php');
+  require_once ('pages/authorization_admin.php');
+  if (!isset($_SESSION)) {
+    session_start();
+  }
   require "inc.koneksi.php";
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tof Up Game St0re</title>
+    <title>Top Up Games St0re</title>
     <link href="css/flexslider.css" rel="stylesheet"/>
 		<link href="css/main.css" rel="stylesheet"/>
     <!-- Bootstrap CSS -->

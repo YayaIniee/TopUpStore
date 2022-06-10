@@ -1,4 +1,5 @@
 <?php
+    require_once "authorization_admin.php";
     require_once('./class/class.Game.php'); 
     $objGame = new Game(); 
     
@@ -36,7 +37,7 @@
                 $objGame->UpdateFotoGame();
                 if($objGame->hasil){			
                     echo "<script> alert('".$objGame->message."'); </script>";
-                    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php?p=gamelist">'; 				
+                    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=dahsboardadmin.php?p=gamelist">'; 				
                 }
                 else
                     echo "<script> alert('Proses update gagal. Silakan ulangi'); </script>";
@@ -84,7 +85,7 @@
             <tr> 
                 <td colspan="2"></td>
                 <td><input type="submit" class="btn btn-success" value="Save" name="btnSubmit">
-                    <a href="index.php?p=gamelist" class="btn btn-warning text-white">Cancel</a></td>
+                    <a href="dahsboardadmin.php?p=gamelist" class="btn btn-warning text-white">Cancel</a></td>
                 <td></td>
             </tr>
         </table>

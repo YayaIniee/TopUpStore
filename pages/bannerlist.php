@@ -1,8 +1,11 @@
 
+<?php
+	require_once "authorization_admin.php";
+?>
 <div class="container">  
 <div class="span11">			
   <h4 class="title"><span class="text"><strong>Banner List</strong></span></h4>
-  <a class="btn btn-success" href="index.php?p=banner">Add</a>
+  <a class="btn btn-success" href="dashboardadmin.php?p=banner">Add</a>
   <br>
   <br>  
 <table class="table">
@@ -30,8 +33,8 @@
 					echo '<td class="col-2">'.$dataBanner->deskripsi1.'</td>';
                     echo '<td class="col-4">'.$dataBanner->deskripsi2.'</td>';
 					echo "<td><img src='./assets/upload/banner/".$dataBanner->foto."' width='100px' height='50px'/></td>";
-					echo '<td><a class="btn btn-warning"  href="index.php?p=banner&id='.$dataBanner->id.'"><i class="fas fa-edit"></i></a> |
-   					          <a class="btn btn-danger"  href="index.php?p=deletebanner&id='.$dataBanner->id.'" 
+					echo '<td><a class="btn btn-warning"  href="dashboardadmin.php?p=banner&id='.$dataBanner->id.'"><i class="fas fa-edit"></i></a> |
+   					          <a class="btn btn-danger"  href="dashboardadmin.php?p=deletebanner&id='.$dataBanner->id.'" 
 							  onclick="return confirm(\'Apakah anda yakin ingin menghapus?\')"><i class="fas fa-eraser"></i></a></td>';	
 				echo '</tr>';
 				

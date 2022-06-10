@@ -1,7 +1,10 @@
+<?php
+	require_once "authorization_admin.php";
+?>
 <div class="container">
 	<div class="col-lg-12">			
 		<h4 class="title"><span class="text"><strong>Voucher List</strong></span></h4>
-		<a class="btn btn-success" href="index.php?p=voucher">Add</a>
+		<a class="btn btn-success" href="dashboardadmin.php?p=voucher">Add</a>
 		<br>
 		<table class="table">
 			<tr>
@@ -37,8 +40,8 @@
 							echo '<td>'.$dataVoucher->nominal.'</td>';
 							echo '<td>'.$dataVoucher->nama.'</td>';
 							echo '<td>Rp '.number_format($dataVoucher->harga,2,',','.').'</td>';
-							echo '<td><a class="btn btn-warning"  href="index.php?p=voucher&id='.$dataVoucher->id.'"><i class="fas fa-edit"></i></a> |
-									<a class="btn btn-danger"  href="index.php?p=deletevoucher&id='.$dataVoucher->id.'" 
+							echo '<td><a class="btn btn-warning"  href="dashboardadmin.php?p=voucher&id='.$dataVoucher->id.'"><i class="fas fa-edit"></i></a> |
+									<a class="btn btn-danger"  href="dashboardadmin.php?p=deletevoucher&id='.$dataVoucher->id.'" 
 									onclick="return confirm(\'Apakah anata yakin ingin menghapus?\')"><i class="fas fa-eraser"></i></a>';
 						echo '</tr>';
 						$no++;

@@ -1,4 +1,5 @@
 <?php
+    require_once "authorization_admin.php";
     require_once('./class/class.Game.php');
     $objGame = new Game();
     if(isset($_POST['btnSubmit'])){
@@ -15,7 +16,7 @@
             } 
             echo "<script> alert('$objGame->message'); </script>";
             if ($objGame->hasil) {
-                echo '<script> window.location = "index.php?p=gamelist"; </script>';
+                echo '<script> window.location = "dashboardadmin.php?p=gamelist"; </script>';
             }
     } else if(isset($_GET['id'])) {
         $objGame->id = $_GET['id'];
@@ -44,7 +45,7 @@
         <tr>
             <td colspan="2"></td>
             <td><input type="submit" class="btn btn-success" value="Save" name="btnSubmit">
-                 <a href="index.php?p=gamelist" class="btn btn-warning text-white">Cancel</a></td>
+                 <a href="dashboardadmin.php?p=gamelist" class="btn btn-warning text-white">Cancel</a></td>
             <td></td>
         </tr>
     </table>

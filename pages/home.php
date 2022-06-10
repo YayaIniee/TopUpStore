@@ -35,18 +35,48 @@
 			$objGame = new Game(); 				
       	$arrayResult = $objGame->SelectAllGame(0, '');
 				foreach ($arrayResult as $dataGame) {
-          echo '
-            <div class="col-md-3 mb-4">
-              <div class="card wrapper-game card-game p-2 shadow-lg" width="22rem">
-                <a href="index.php?p=sectiongame&id='.$dataGame->id.'">
-                  <img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid rounded-3 img-game">
-                </a>
-                <div class="card-body card-game-body rounded-3">
-                  <a href="index.php?p=sectiongame&id='.$dataGame->id.'" class="title" style="text-decoration:none;"><h5>'.$dataGame->nama.'</h5></a>
-                </div>
-              </div>
-            </div>
-          ';
+          if(isset($_SESSION["role"])){
+            if($_SESSION["role"] == "admin"){ // sebagai admin
+              echo '
+                  <div class="col-md-3 mb-4">
+                    <div class="card wrapper-game card-game p-2 shadow-lg" width="22rem">
+                      <a href="dashboardadmin.php?p=sectiongame&id='.$dataGame->id.'">
+                        <img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid rounded-3 img-game">
+                      </a>
+                      <div class="card-body card-game-body rounded-3">
+                        <a href="dashboardadmin.php?p=sectiongame&id='.$dataGame->id.'" class="title" style="text-decoration:none;"><h5>'.$dataGame->nama.'</h5></a>
+                      </div>
+                    </div>
+                  </div>
+                ';
+            } else{ // member
+              echo '
+                  <div class="col-md-3 mb-4">
+                    <div class="card wrapper-game card-game p-2 shadow-lg" width="22rem">
+                      <a href="dashboardmember.php?p=sectiongame&id='.$dataGame->id.'">
+                        <img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid rounded-3 img-game">
+                      </a>
+                      <div class="card-body card-game-body rounded-3">
+                        <a href="dashboardmember.php?p=sectiongame&id='.$dataGame->id.'" class="title" style="text-decoration:none;"><h5>'.$dataGame->nama.'</h5></a>
+                      </div>
+                    </div>
+                  </div>
+                ';
+            }
+          } else { //sebagai guest
+              echo '
+                  <div class="col-md-3 mb-4">
+                    <div class="card wrapper-game card-game p-2 shadow-lg" width="22rem">
+                      <a href="index.php?p=sectiongame&id='.$dataGame->id.'">
+                        <img src="./assets/upload/game/'.$dataGame->foto.'" alt="" class="img-fluid rounded-3 img-game">
+                      </a>
+                      <div class="card-body card-game-body rounded-3">
+                        <a href="index.php?p=sectiongame&id='.$dataGame->id.'" class="title" style="text-decoration:none;"><h5>'.$dataGame->nama.'</h5></a>
+                      </div>
+                    </div>
+                  </div>
+                ';
+          }
         }
       ?>      
     </div>

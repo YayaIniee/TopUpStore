@@ -1,4 +1,5 @@
 <?php
+    require_once "authorization_admin.php";
     require_once('./class/class.Genre.php');
     $objGenre = new Genre();
     if(isset($_POST['btnSubmit'])){
@@ -14,7 +15,7 @@
             } 
             echo "<script> alert('$objGenre->message'); </script>";
             if ($objGenre->hasil) {
-                echo '<script> window.location = "index.php?p=genrelist"; </script>';
+                echo '<script> window.location = "dashboardadmin.php?p=genrelist"; </script>';
             }
     } else if(isset($_GET['id'])) {
         $objGenre->id = $_GET['id'];
@@ -37,7 +38,7 @@
         <tr>
             <td colspan="2"></td>
             <td><input type="submit" class="btn btn-success" value="Save" name="btnSubmit">
-                 <a href="index.php?p=genrelist" class="btn btn-warning text-white">Cancel</a></td>
+                 <a href="dashboardadmin.php?p=genrelist" class="btn btn-warning text-white">Cancel</a></td>
             <td></td>
         </tr>
     </table>
