@@ -3,17 +3,15 @@
 if (!isset($_SESSION)) {
   session_start();
 }
-if(isset($_GET['id'])){	
-  require_once('./class/class.Game.php');
-  $objGame = new Game(); 
-  $objGame->id = $_GET['id'];	
-  $objGame->SelectOneGame();  
-}
   if(isset($_GET['id'])){	
-		require_once('./class/class.Voucher.php');
-		$objVoucher = new Voucher(); 
-		$objVoucher->id = $_GET['id'];	
-		$objVoucher->SelectOneVoucher();  
+		require_once('./class/class.Game.php');
+		$objGame = new Game(); 
+		$objGame->id = $_GET['id'];	
+		$objGame->SelectOneGame();  
+    require_once('./class/class.Voucher.php');
+    $objVoucher = new Voucher();
+    $objVoucher->id = $_GET['id'];
+    $objVoucher->SelectAllVoucher();
 	}
 ?>
 <div class="container">
@@ -53,7 +51,7 @@ if(isset($_GET['id'])){
                 <h5 class="">Nominal</h5>
                 <div class="mt-4">
                   <div class="panel-topup">
-                    <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""></button>
+                    <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""><?php echo $objVoucher->nominal; ?></button>
                   </div>
                 </div>
               </div> <!-- card-body -->

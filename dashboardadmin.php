@@ -1,8 +1,5 @@
 <?php 
   require_once ('pages/authorization_admin.php');
-  if (!isset($_SESSION)) {
-    session_start();
-  }
   require "inc.koneksi.php";
 ?>
 <!doctype html>

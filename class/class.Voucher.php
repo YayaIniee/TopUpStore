@@ -8,6 +8,9 @@
             public $harga ='';
             public $idgame =0;
             public $namagame ='';
+            public $foto ='';
+            public $namauang ='';
+            public $deskripsi ='';
             public $hasil = false;
             public $message ='';
                         
@@ -48,14 +51,12 @@
                    $this->message ='Data gagal dihapus!';	
             }
             
-            public function SelectAllVoucher($cari_idgame){
-                $sql = "SELECT a.*, b.nama as namagame FROM voucher a, game b where a.idgame= b.id";
-                if($cari_idgame != '')
-                {
-                    $sql .= " AND a.idgame = $cari_idgame";
-                }
-             $sql .= " ORDER BY id ASC";
-                            
+            public function SelectAllVoucher(){
+                $sql = "SELECT g.*, v.nominal, v.nama AS namauang,v.harga
+                        FROM voucher v LEFT JOIN game g
+                        ON g.id = v.idgame
+                        WHERE g.id = '$this->id'";
+                                    
                 $result = mysqli_query($this->connection, $sql);
                 $arrResult = Array();
                 $cnt=0;
@@ -64,17 +65,18 @@
                     $objVoucher = new Voucher(); 
                     $objVoucher->id=$data['id'];
                     $objVoucher->nama=$data['nama'];
-                    $objVoucher->idgame=$data['idgame'];
-                    $objVoucher->namagame=$data['namagame'];
                     $objVoucher->nominal=$data['nominal'];
+                    $objVoucher->namauang=$data['namauang'];
                     $objVoucher->harga=$data['harga'];
+                    $objVoucher->foto=$data['foto'];
+                    $objVoucher->deskripsi=$data['deskripsi'];
                    
                     $arrResult[$cnt] = $objVoucher;
                     $cnt++;
                 }
                 return $arrResult;			
             }
-    
+
             public function SelectOneVoucher(){
                 $sql = "SELECT a.*, b.nama as namagame FROM voucher a, game b where a.idgame= b.id AND a.id='$this->id'";
                 $resultOne = mysqli_query($this->connection, $sql);

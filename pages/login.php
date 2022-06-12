@@ -1,31 +1,40 @@
 <?php
     require_once('./class/class.User.php');
+    require_once('./class/class.Member.php');
     if(isset($_POST['btnLogin'])){
+        $objUser = new User();
+
         $email = $_POST['email'];
         $password = $_POST['password'];
 
         $objUser = new User();
+       // $objUser->hasil = true;
         $objUser->ValidateEmail($email);
 
         if($objUser->hasil){
-            $ismatch =  password_verify($password, $objUser->password);
+            $ismatch = password_verify($password, $objUser->password);
             if($ismatch){
                 if(!isset($_SESSION)){
                     session_start();
+                    
                 }
-                $_SESSION["userid"]= $objUser->userid;
+
+                $_SESSION["id"]= $objUser->id;
+                $_SESSION["idmember"]= $objUser->mmbr->idmember;
                 $_SESSION["role"]= $objUser->role;
-                $_SESSION["nama"]= $objUser->nama;
+                $_SESSION["nama"]= $objUser->mmbr->fname.' '.$objUser->mmbr->lname;
                 $_SESSION["email"]= $objUser->email;
 
                 echo "<script>alert('Login Berhasil');</script>";
+                header("location: ./index.php");
 
                 if($objUser->role == 'member')
                     echo '<script>window.location == "dashboardmember.php";</script>';
                 if($objUser->role == 'admin')
                     echo '<script>window.location == "dashboardadmin.php";</script>';
             } else {
-                echo "<script>alert('Password tidak match');</script>";
+                echo $password;
+              //  echo "<script>alert('Password tidak match');</script>";
             }
         } else {
             echo "<script>alert('Email tidak terdaftar');</script>";
