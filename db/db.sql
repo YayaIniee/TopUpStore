@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 12:06 PM
+-- Generation Time: Jun 13, 2022 at 06:56 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -40,11 +40,9 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `nama`, `deskripsi1`, `deskripsi2`, `foto`) VALUES
-(9, 'VALORANT', 'Diskon 100%', 'Beli yok Biar saya bisa Liburan Kemana-mana', '9.jpg'),
-(10, 'PUBGM', 'NGGAK ADA DISKON', 'Beli yok Biar saya bisa Liburan Kemana-mana', '10.jpg'),
-(11, 'DISKON STENGAH_STENGAH', 'Diskon 50%', 'Yuk Buruan Beli selagi Diskon 50%', '11.jpg'),
-(13, 'FREE FAYER MEX', 'NGGAK ADA DISKON', 'Yuk Buruan Beli selagi Diskon 100%', '13.jpg'),
-(14, 'NO DISCONT-DISCONT', 'NGGAK ADA DISKON', 'KESETIAAN PEMBELI KETIKA TIDAK ADA DISKON', '14.jpeg');
+(15, 'DISC GILA-GILAAN', 'Diskon 100%', 'Yuk Buruan Beli selagi Diskon 100%', '15.jpg'),
+(16, 'BUY ONE GET ONE ', 'NGGAK ADA DISKON', 'Beli yok Biar saya bisa Liburan Kemana-mana', '16.jpg'),
+(17, '6/6 Murah MERIAH', 'BELI BANYAK BANYAK', 'SEMOGA DIMUDAHKAN REJEKI ANDA', '17.jpg');
 
 -- --------------------------------------------------------
 
@@ -65,8 +63,7 @@ CREATE TABLE `game` (
 
 INSERT INTO `game` (`id`, `nama`, `deskripsi`, `foto`) VALUES
 (11, 'VALORANT', 'bermain valorant dengan penuh skin senjata sangat membanggakan\r\nmaka dari itu belilah points di toko sebalah', '11.jpg'),
-(12, 'PUBGM', 'PpPpP\r\n', '12.jpg'),
-(13, 'FREE FAYER', 'Game Burik	            ', '13.jpg');
+(12, 'PUBGM', 'PpPpP\r\n', '12.jpg');
 
 -- --------------------------------------------------------
 
@@ -103,12 +100,55 @@ CREATE TABLE `genregames` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `member`
+--
+
+CREATE TABLE `member` (
+  `fname` varchar(30) DEFAULT NULL,
+  `lname` varchar(30) DEFAULT NULL,
+  `idmember` int(11) NOT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `bdate` date DEFAULT NULL,
+  `sex` varchar(10) DEFAULT NULL,
+  `iduser` int(11) DEFAULT NULL,
+  `foto` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `role` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `password`, `role`) VALUES
+(1, 'admin@gmail.com', '$2y$10$jJQIbzAFXdTHhToneHVXYO4cGBTG3x.Z.RG3trYOPuzLbf1DSsKMu', 'admin'),
+(3, 'animeuniversal2@gmail.com', '$2y$10$81LJMHS3OIfYxQhSl8SnxO7bqjQ/QtCKQP9fD9y0x6qiojtTSqEeO', 'member'),
+(4, 'yayainie@gmail.com', '$2y$10$hamjFzsjiG2T.dWn0TV6FOY2x2G2EzdGVeirWLBimp0jzg7DM5bhm', 'admin'),
+(16, 'bsmith@gmail.com', '$2y$10$S9ktD/tNqKpTM/KmyQyJieer3lONSE5B2vePt56Zu.2iiNOmLZ7Fm', 'member'),
+(17, 'user@gmail.com', '$2y$10$ReMb.ReXXw/gOrSI47NCkuLjTKpi/GHuSt.Ool.QrE2TGNzSmNb4G', 'member'),
+(18, 'bsmith@gmail.com', '$2y$10$QZ14.56rDzaS32x6lT4h7.j1XMa2YEuz8a8BbcfVBItjuSalRX6K.', 'member'),
+(19, 'bsmith@gmail.com', '$2y$10$jTIdT6MJJgxE1q4uoTJPle5brvEBfDxY4R1EGIFwAN6YrrV4RsWQa', 'member');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `voucher`
 --
 
 CREATE TABLE `voucher` (
   `id` int(11) NOT NULL,
-  `nama` varchar(30) NOT NULL,
+  `matauang` varchar(30) NOT NULL,
   `nominal` varchar(30) NOT NULL,
   `harga` int(11) NOT NULL,
   `idgame` int(11) NOT NULL
@@ -118,10 +158,13 @@ CREATE TABLE `voucher` (
 -- Dumping data for table `voucher`
 --
 
-INSERT INTO `voucher` (`id`, `nama`, `nominal`, `harga`, `idgame`) VALUES
+INSERT INTO `voucher` (`id`, `matauang`, `nominal`, `harga`, `idgame`) VALUES
 (1, 'UC', '10', 1000, 12),
 (2, 'UC', '20', 2100, 12),
-(3, 'Diamond', '13 ', 1000, 13);
+(7, 'UC', '30', 3100, 12),
+(8, 'Points', '10', 1100, 11),
+(9, 'Points', '20', 2100, 11),
+(10, 'Points', '30', 3100, 11);
 
 --
 -- Indexes for dumped tables
@@ -153,6 +196,19 @@ ALTER TABLE `genregames`
   ADD KEY `idgenre` (`idgenre`);
 
 --
+-- Indexes for table `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`idmember`),
+  ADD KEY `iduser` (`iduser`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `voucher`
 --
 ALTER TABLE `voucher`
@@ -167,7 +223,7 @@ ALTER TABLE `voucher`
 -- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `game`
@@ -182,10 +238,22 @@ ALTER TABLE `genre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `member`
+--
+ALTER TABLE `member`
+  MODIFY `idmember` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
 -- AUTO_INCREMENT for table `voucher`
 --
 ALTER TABLE `voucher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
@@ -197,6 +265,12 @@ ALTER TABLE `voucher`
 ALTER TABLE `genregames`
   ADD CONSTRAINT `genregames_ibfk_1` FOREIGN KEY (`idgame`) REFERENCES `game` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `genregames_ibfk_2` FOREIGN KEY (`idgenre`) REFERENCES `genre` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `member`
+--
+ALTER TABLE `member`
+  ADD CONSTRAINT `member_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `voucher`
