@@ -8,15 +8,15 @@
             public $harga ='';
             public $idgame =0;
             public $namagame ='';
-            public $foto ='';
-            public $namauang ='';
-            public $deskripsi ='';
+            public $fotogame ='';
+            public $matauang ='';
+            public $deskripsigame ='';
             public $hasil = false;
             public $message ='';
                         
             public function AddVoucher(){
-                $sql = "INSERT INTO voucher(nama, nominal, idgame, harga) 
-                        values ('$this->nama', '$this->nominal', '$this->idgame', '$this->harga')";
+                $sql = "INSERT INTO voucher(matauang, nominal, idgame, harga) 
+                        values ('$this->matauang', '$this->nominal', '$this->idgame', '$this->harga')";
                 $this->hasil = mysqli_query($this->connection, $sql);
                 
                 if($this->hasil)
@@ -26,7 +26,7 @@
             }
             
             public function UpdateVoucher(){
-                $sql = "UPDATE voucher SET nama ='$this->nama',
+                $sql = "UPDATE voucher SET matauang ='$this->matauang',
                         nominal = '$this->nominal',
                         harga = '$this->harga',
                         idgame = '$this->idgame'
@@ -51,11 +51,14 @@
                    $this->message ='Data gagal dihapus!';	
             }
             
-            public function SelectAllVoucher(){
-                $sql = "SELECT g.*, v.nominal, v.nama AS namauang,v.harga
-                        FROM voucher v LEFT JOIN game g
-                        ON g.id = v.idgame
-                        WHERE g.id = '$this->id'";
+            public function SelectAllVoucher($cari_idgame){
+                $sql = "SELECT a.*, b.nama as namagame, b.foto as fotogame, b.deskripsi as deskripsigame FROM voucher a, game b where a.idgame= b.id";
+                if($cari_idgame != '')
+                {
+                    $sql .= " AND a.idgame = $cari_idgame";
+                }
+                
+                $sql .= " ORDER BY id ASC";
                                     
                 $result = mysqli_query($this->connection, $sql);
                 $arrResult = Array();
@@ -64,12 +67,13 @@
                 {
                     $objVoucher = new Voucher(); 
                     $objVoucher->id=$data['id'];
-                    $objVoucher->nama=$data['nama'];
+                    $objVoucher->idgame=$data['idgame'];
+                    $objVoucher->namagame=$data['namagame'];
+                    $objVoucher->deskripsigame=$data['deskripsigame'];
+                    $objVoucher->fotogame=$data['fotogame'];
+                    $objVoucher->matauang=$data['matauang'];
                     $objVoucher->nominal=$data['nominal'];
-                    $objVoucher->namauang=$data['namauang'];
                     $objVoucher->harga=$data['harga'];
-                    $objVoucher->foto=$data['foto'];
-                    $objVoucher->deskripsi=$data['deskripsi'];
                    
                     $arrResult[$cnt] = $objVoucher;
                     $cnt++;
@@ -83,10 +87,10 @@
                 if(mysqli_num_rows($resultOne) == 1){
                     $this->hasil = true;
                     $data = mysqli_fetch_assoc($resultOne);
-                    $this->nama = $data['nama'];				
-                    $this->nominal = $data['nominal'];	
+                    $this->matauang = $data['matauang'];
+                    $this->nominal = $data['nominal'];
                     $this->namagame=$data['namagame'];			
-                    $this->harga = $data['harga'];		
+                    $this->harga = $data['harga'];
                     $this->idgame = $data['idgame'];	
                 }							
             }

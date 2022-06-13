@@ -38,7 +38,7 @@
 							echo '<td>'.$no.'</td>';
 							echo '<td>'.$dataVoucher->namagame.'</td>';
 							echo '<td>'.$dataVoucher->nominal.'</td>';
-							echo '<td>'.$dataVoucher->nama.'</td>';
+							echo '<td>'.$dataVoucher->matauang.'</td>';
 							echo '<td>Rp '.number_format($dataVoucher->harga,2,',','.').'</td>';
 							echo '<td><a class="btn btn-warning"  href="dashboardadmin.php?p=voucher&id='.$dataVoucher->id.'"><i class="fas fa-edit"></i></a> |
 									<a class="btn btn-danger"  href="dashboardadmin.php?p=deletevoucher&id='.$dataVoucher->id.'" 

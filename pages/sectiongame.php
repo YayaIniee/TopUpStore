@@ -1,30 +1,26 @@
 
 <?php
-if (!isset($_SESSION)) {
-  session_start();
-}
-  if(isset($_GET['id'])){	
-		require_once('./class/class.Game.php');
-		$objGame = new Game(); 
-		$objGame->id = $_GET['id'];	
-		$objGame->SelectOneGame();  
-    require_once('./class/class.Voucher.php');
-    $objVoucher = new Voucher();
-    $objVoucher->id = $_GET['id'];
-    $objVoucher->SelectAllVoucher();
-	}
-?>
+  if (!isset($_SESSION)) {
+    session_start();
+  }
+  if(isset($_GET['id'])){ 
+    $idgame =  $_GET['id'];
+    require_once('./class/class.Voucher.php'); 
+    $objVoucher = new Voucher();    
+    $arrayResult = $objVoucher->SelectAllVoucher($idgame, '');
+    }  
+  ?>
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-sm-12 col-lg-4 fnt">
-        <h4><?php echo $objGame->nama; ?></h4>
+        <h4><?php echo $arrayResult[0]->namagame;  ?></h4>
         <div class="col-lg-6 col-md-8 col-8">
-            <?php echo '<img class="img-fluid shadow-lg" src="./assets/upload/game/'.$objGame->foto.'" alt="foto" width="100%">' ?>
+            <?php echo '<img class="img-fluid shadow-lg" src="./assets/upload/game/'.$arrayResult[0]->fotogame.'" alt="foto" width="100%">' ?>
             <hr class="d-sm">
         </div>
         <div class="col-12">
-        <b><?php echo $objGame->nama; ?></b><br>
-        <?php echo $objGame->deskripsi; ?>
+        <b><?php echo $arrayResult[0]->namagame;  ?></b><br>
+        <?php echo $arrayResult[0]->deskripsigame; ?>
         </div>
         <hr class="d-sm">
     </div>
@@ -50,9 +46,28 @@ if (!isset($_SESSION)) {
                 <div class="">2</div>
                 <h5 class="">Nominal</h5>
                 <div class="mt-4">
-                  <div class="panel-topup">
-                    <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""><?php echo $objVoucher->nominal; ?></button>
-                  </div>
+                <?php
+                  foreach($arrayResult as $dataVoucher){
+                    if(isset($_SESSION["role"])){
+                      if($_SESSION["role"] == "admin"){
+                        echo '
+                        <div class="panel-topup">
+                          <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""><a style="text-decoration:none;" '.$dataVoucher->id.'" class="title">'.$dataVoucher->nominal.' '.$dataVoucher->matauang.'</a>admin</button>
+                        </div>';
+                      } else {
+                          echo '
+                          <div class="panel-topup">
+                            <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""><a style="text-decoration:none;" '.$dataVoucher->id.'" class="title">'.$dataVoucher->nominal.' '.$dataVoucher->matauang.'</a>member</button>
+                          </div>';
+                      }
+                    } else {
+                        echo '
+                        <div class="panel-topup">
+                          <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""><a style="text-decoration:none;" '.$dataVoucher->id.'" class="title">'.$dataVoucher->nominal.' '.$dataVoucher->matauang.'</a>guest</button>
+                        </div>';
+                    }
+                }
+                ?>
                 </div>
               </div> <!-- card-body -->
             </div> <!-- card -->

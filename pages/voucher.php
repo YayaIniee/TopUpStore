@@ -6,7 +6,7 @@
 
 	if(isset($_POST['btnSubmit'])){	
 
-		$objVoucher->nama = $_POST['nama'];	
+		$objVoucher->matauang = $_POST['matauang'];	
 		$objVoucher->nominal = $_POST['nominal'];
 		$objVoucher->idgame = $_POST['idgame'];	
 		$objVoucher->harga = $_POST['harga'];		
@@ -60,9 +60,9 @@
 				</tr>	
 				<tr>
 					<tr>
-					<td>Nama</td>
+					<td>Mata Uang</td>
 					<td>:</td>
-					<td><input type="text" class="form-control" id="nama" name="nama" value="<?php echo $objVoucher->nama; ?>"></td>
+					<td><input type="text" class="form-control" id="nama" name="nama" value="<?php echo $objVoucher->matauang; ?>"></td>
 				</tr>	
 					<tr>
 					<td>Nominal</td>

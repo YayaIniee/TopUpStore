@@ -10,8 +10,8 @@
         public $message = '';
     
     public function AddGame(){
-			$sql = "INSERT INTO game (id, nama, deskripsi)
-                    VALUES ('$this->id', '$this->nama', '$this->deskripsi')";
+			$sql = "INSERT INTO game (nama, deskripsi)
+                    VALUES ('$this->nama', '$this->deskripsi')";
             $this->hasil = mysqli_query($this->connection, $sql);
 
             if($this->hasil)
