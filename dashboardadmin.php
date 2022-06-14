@@ -38,6 +38,10 @@
         <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a href="dashboardadmin.php" class="nav-link font-nav active" aria-current="page">HOME</i></a>
+          </li>
+          <li class="nav-item">
+            <a href="dashboardadmin.php?p=userlist" class="nav-link font-nav">User</i></a>
+          </li>
           <li class="nav-item">
             <a href="dashboardadmin.php?p=gamelist" class="nav-link font-nav">Game</i></a>
           </li>

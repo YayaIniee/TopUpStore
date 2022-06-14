@@ -37,7 +37,7 @@
                 $objGame->UpdateFotoGame();
                 if($objGame->hasil){			
                     echo "<script> alert('".$objGame->message."'); </script>";
-                    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=dahsboardadmin.php?p=gamelist">'; 				
+                    echo '<script> window.location = "dashboardadmin.php?p=gamelist"; </script>';				
                 }
                 else
                     echo "<script> alert('Proses update gagal. Silakan ulangi'); </script>";

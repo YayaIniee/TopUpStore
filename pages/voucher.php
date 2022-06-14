@@ -41,7 +41,7 @@
 					<td>game</td>
 					<td>:</td>
 					<td>
-						<select name="idgame"><option></option>
+						<select name="idgame" class="form-control"><option></option>
 							<?php
 							
 								$objGame = new Game(); 
@@ -62,7 +62,7 @@
 					<tr>
 					<td>Mata Uang</td>
 					<td>:</td>
-					<td><input type="text" class="form-control" id="nama" name="nama" value="<?php echo $objVoucher->matauang; ?>"></td>
+					<td><input type="text" class="form-control" id="matauang" name="matauang" value="<?php echo $objVoucher->matauang; ?>"></td>
 				</tr>	
 					<tr>
 					<td>Nominal</td>

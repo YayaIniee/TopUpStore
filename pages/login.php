@@ -26,7 +26,6 @@
                 $_SESSION["email"]= $objUser->email;
 
                 echo "<script>alert('Login Berhasil');</script>";
-                header("location: ./index.php");
 
                 if($objUser->role == 'member')
                     echo '<script>window.location == "dashboardmember.php";</script>';

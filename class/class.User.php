@@ -2,6 +2,7 @@
 	include 'class.Member.php';
 	class User extends Connection{
 		public $id = 0;
+		public $iduser = 0;
 		public $nama = '';
 		public $email = '';
 		public $password = '';
@@ -22,9 +23,9 @@
 					VALUES ('$this->email', '$this->password', '$this->role')";
 			$this->hasil = mysqli_query($this->connection, $sql);
 
-			$id = $this->connection->insert_id;
-			$sql ="UPDATE member set id = $id where idmember = '".$this->mmbr->idmember."'";	
-			$this->id = $this->connection->insert_id;
+			$iduser = $this->connection->insert_id;
+			$sql ="UPDATE member set iduser = $iduser where idmember = '".$this->mmbr->idmember."'";
+			$this->hasil = mysqli_query($this->connection, $sql);
 
 			if($this->hasil)
 				$this->message = 'Data berhasil ditambahkan!';
@@ -76,6 +77,7 @@
 		}
 
 		public function SelectAllUser(){
+			$this->connect();
 			$sql = "SELECT * FROM v_user ORDER BY id ASC";
 			$result = mysqli_query($this->connection, $sql);	
 			$arrResult = Array();
@@ -97,6 +99,7 @@
 			return $arrResult;			
 		}
 
+
 		public function ValidateEmail($inputemail){
 			$this->connect();
 			$sql = "SELECT * FROM user
@@ -106,7 +109,7 @@
 				$this->hasil = true;
 				$data = mysqli_fetch_assoc($result);
 				$this->id = $data['id'];				
-				$this->password = $data['password'];				
+				$this->password = $data['password'];			
 			//	$this->mmbr->fname = $data['fname'];				
 			//	$this->mmbr->lname = $data['lname'];				
 				$this->email=$data['email'];

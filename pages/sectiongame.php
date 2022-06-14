@@ -25,7 +25,11 @@
         <hr class="d-sm">
     </div>
     <div class="col-md-12 col-sm-12 col-lg-8 mt-3">
-      <form class="contact form" id="orderform" method="POST" autocomplete="off">
+
+
+
+
+      <form class="contact form" action="dashboardmember.php?p=orderform" method="POST">
         <div class="row">
           <div class="col-12 mb-3"> <!-- Lengkapi Data -->
             <div class="card">
@@ -34,7 +38,7 @@
                 <h5 class="ml-5 mt-1">Lengkapi Data</h5>
                 <div class="form-row mt-4">
                   <div class="col">
-                    <input type="number" class="form-control dataid" name="data" placeholder="Masukan ID" required>
+                    <input type="number" class="form-control dataid" name="idgame" placeholder="Masukan ID" required>
                   </div>
                 </div>
               </div>
@@ -46,28 +50,14 @@
                 <div class="">2</div>
                 <h5 class="">Nominal</h5>
                 <div class="mt-4">
+                <div class="panel-topup">
                 <?php
                   foreach($arrayResult as $dataVoucher){
-                    if(isset($_SESSION["role"])){
-                      if($_SESSION["role"] == "admin"){
-                        echo '
-                        <div class="panel-topup">
-                          <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""><a style="text-decoration:none;" '.$dataVoucher->id.'" class="title">'.$dataVoucher->nominal.' '.$dataVoucher->matauang.'</a>admin</button>
-                        </div>';
-                      } else {
-                          echo '
-                          <div class="panel-topup">
-                            <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""><a style="text-decoration:none;" '.$dataVoucher->id.'" class="title">'.$dataVoucher->nominal.' '.$dataVoucher->matauang.'</a>member</button>
-                          </div>';
-                      }
-                    } else {
-                        echo '
-                        <div class="panel-topup">
-                          <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""><a style="text-decoration:none;" '.$dataVoucher->id.'" class="title">'.$dataVoucher->nominal.' '.$dataVoucher->matauang.'</a>guest</button>
-                        </div>';
-                    }
+                        echo ' <button type="button" class="btn btn-outline-dark mt-2" style="width:100px" value=""><a style="text-decoration:none;" '.$dataVoucher->id.'" class="title">'.$dataVoucher->nominal.' '.$dataVoucher->matauang.'</a></button>';
+
                 }
                 ?>
+                  </div>
                 </div>
               </div> <!-- card-body -->
             </div> <!-- card -->
@@ -78,7 +68,7 @@
                 <div class="">3</div>
                 <h5 class="">No Whatsapp</h5>
                 <div class="mt-4">
-                  <input type="number" class="form-control" name="notelp" placeholder="08xx xxxx xxxx" id="notelp">
+                  <input type="number" class="form-control" name="notelp" placeholder="08xx xxxx xxxx" id="notelp" required>
                 </div>
               </div> <!-- card-body -->
             </div> <!-- card -->
@@ -92,7 +82,7 @@
                   <?php
                       } else{
                   ?>    
-                        <button type="button" id="beli" class="btn btn-warning">Beli Sekarang</button>
+                        <input name="btnPesan" class="btn btn-warning" type="submit" value="Beli Sekarang">
                   <?php    
                       } 
                   
@@ -107,6 +97,11 @@
           </div> <!-- col-12 mb-3 -->
         </div> <!-- row -->
       </form>
+
+
+
+
+
     </div> <!-- col-md-12 col-sm-12 col-lg-8 -->
   </div> <!-- row mt-2 -->
 </div>

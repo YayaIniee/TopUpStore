@@ -8,6 +8,7 @@
 		public $address = '';
 		public $bdate = '';
 		public $sex = '';
+		public $email = '';
 		public $iduser=0;
 		public $foto='';
 		
@@ -78,14 +79,13 @@
 		}
 			
 		public function SelectOneMember(){
-			$sql = "SELECT a.*, b.email FROM member a, user b WHERE a.iduser = b.id AND a.idmember = '$this->idmember'";
+			$sql = "SELECT * FROM member WHERE idmember = '$this->idmember'";
 			$resultOne = mysqli_query($this->connection, $sql);	
 			if(mysqli_num_rows($resultOne) == 1){
 				$this->hasil = true;
 				$data = mysqli_fetch_assoc($resultOne);
 				$this->idmember = $data['idmember'];
-				$this->iduser = $data['iduser'];				
-				$this->email = $data['email'];
+				$this->iduser = $data['iduser'];
 				$this->fname = $data['fname'];				
 				$this->lname = $data['lname'];				
 				$this->bdate = $data['bdate'];				
