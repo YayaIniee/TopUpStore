@@ -26,9 +26,6 @@
     </div>
     <div class="col-md-12 col-sm-12 col-lg-8 mt-3">
 
-
-
-
       <form class="contact form" action="dashboardmember.php?p=orderform" method="POST">
         <div class="row">
           <div class="col-12 mb-3"> <!-- Lengkapi Data -->
@@ -62,13 +59,13 @@
               </div> <!-- card-body -->
             </div> <!-- card -->
           </div>
-          <div class="col-12 mb-3"> <!-- Nomer Telp -->
+          <div class="col-12 mb-3"> <!-- Email -->
             <div class="card">
               <div class="card-body">
                 <div class="">3</div>
-                <h5 class="">No Whatsapp</h5>
+                <h5 class="">Email</h5>
                 <div class="mt-4">
-                  <input type="number" class="form-control" name="notelp" placeholder="08xx xxxx xxxx" id="notelp" required>
+                  <input type="email" class="form-control" name="email" placeholder="Email" id="email" required>
                 </div>
               </div> <!-- card-body -->
             </div> <!-- card -->

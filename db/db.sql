@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2022 at 06:56 PM
+-- Generation Time: Jun 21, 2022 at 05:58 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -40,9 +40,20 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `nama`, `deskripsi1`, `deskripsi2`, `foto`) VALUES
-(15, 'DISC GILA-GILAAN', 'Diskon 100%', 'Yuk Buruan Beli selagi Diskon 100%', '15.jpg'),
-(16, 'BUY ONE GET ONE ', 'NGGAK ADA DISKON', 'Beli yok Biar saya bisa Liburan Kemana-mana', '16.jpg'),
-(17, '6/6 Murah MERIAH', 'BELI BANYAK BANYAK', 'SEMOGA DIMUDAHKAN REJEKI ANDA', '17.jpg');
+(18, 'VALORANT', 'NGGAK ADA DISKON', 'SEMOGA DIMUDAHKAN REJEKI ANDA', '18.jpg'),
+(19, 'FREE DAY', 'Desc 1', 'Desc 2', '19.jpg'),
+(20, 'BANnER', 'Belum Ada Diskon', '- - - - -', '20.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detail_pesanan`
+--
+
+CREATE TABLE `detail_pesanan` (
+  `idpesanan` int(11) NOT NULL,
+  `idvoucher` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -62,8 +73,11 @@ CREATE TABLE `game` (
 --
 
 INSERT INTO `game` (`id`, `nama`, `deskripsi`, `foto`) VALUES
-(11, 'VALORANT', 'bermain valorant dengan penuh skin senjata sangat membanggakan\r\nmaka dari itu belilah points di toko sebalah', '11.jpg'),
-(12, 'PUBGM', 'PpPpP\r\n', '12.jpg');
+(11, 'VALORANT', 'Beli Points Valorant hanya dalam hitungan detik, yang tentunya cepat, aman dan mudah. Cukup pilih Voucher yang diinginkan, lakukan pembayaran, dan PointsValorant akan langsung dikirimkan.\r\nbermain valorant dengan penuh skin senjata sangat membanggakan\r\nmaka dari itu belilah points di toko sebalah', '11.jpg'),
+(12, 'PUBGM', 'Beli Voucher PUBG Mobile (Global) hanya dalam hitungan detik, yang tentunya cepat, aman dan mudah. Cukup pilih Voucher yang diinginkan, lakukan pembayaran, dan Voucher PUBG Mobile (Global) akan langsung dikirimkan.\r\n', '12.jpg'),
+(14, 'FREE FAYER', 'Top Up Free Fire hanya dalam hitungan detik. Cukup masukan ID Free Fire Anda. Pilih jumlah Diamond yang Anda inginkan, selesaikan pembayaran, dan Diamond akan secara langsung ditambahkan ke akun Free Fire Anda.           ', '14.jpg'),
+(15, 'MOBILE LEGENDS', 'Top Up Mobile Legends hanya dalam hitungan detik. Cukup masukan ID dan Server Mobile Legends Anda. Pilih jumlah Diamond yang Anda inginkan, selesaikan pembayaran, dan Diamond akan secara langsung ditambahkan ke akun Mobile Legends Anda.', '15.jpg'),
+(16, 'FREE FAYER', 'Yes            ', '16.jpg');
 
 -- --------------------------------------------------------
 
@@ -117,6 +131,19 @@ CREATE TABLE `member` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pesanan`
+--
+
+CREATE TABLE `pesanan` (
+  `id` int(11) NOT NULL,
+  `idmember` int(11) NOT NULL,
+  `tgltransaksi` date NOT NULL,
+  `status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -132,13 +159,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `role`) VALUES
-(1, 'admin@gmail.com', '$2y$10$jJQIbzAFXdTHhToneHVXYO4cGBTG3x.Z.RG3trYOPuzLbf1DSsKMu', 'admin'),
+(1, 'admin@gmail.com', '$2y$10$QnwDYs6/QyLQiRFWMHa6EONvbrYwQx4.6EGZhYfJNPikUkZRdRL6K', 'admin'),
 (3, 'animeuniversal2@gmail.com', '$2y$10$81LJMHS3OIfYxQhSl8SnxO7bqjQ/QtCKQP9fD9y0x6qiojtTSqEeO', 'member'),
 (4, 'yayainie@gmail.com', '$2y$10$hamjFzsjiG2T.dWn0TV6FOY2x2G2EzdGVeirWLBimp0jzg7DM5bhm', 'admin'),
-(16, 'bsmith@gmail.com', '$2y$10$S9ktD/tNqKpTM/KmyQyJieer3lONSE5B2vePt56Zu.2iiNOmLZ7Fm', 'member'),
 (17, 'user@gmail.com', '$2y$10$ReMb.ReXXw/gOrSI47NCkuLjTKpi/GHuSt.Ool.QrE2TGNzSmNb4G', 'member'),
-(18, 'bsmith@gmail.com', '$2y$10$QZ14.56rDzaS32x6lT4h7.j1XMa2YEuz8a8BbcfVBItjuSalRX6K.', 'member'),
-(19, 'bsmith@gmail.com', '$2y$10$jTIdT6MJJgxE1q4uoTJPle5brvEBfDxY4R1EGIFwAN6YrrV4RsWQa', 'member');
+(20, 'ahmadnurhidaya103@gmail.com', '$2y$10$mwsepyJkaivZnNfRfAprjebqgaIMxRFHfsXH/eMb3evDnT4BEaLme', 'member'),
+(26, 'bsmith@gmail.com', '$2y$10$wmERsLZWhtkPP.52DHYlc.ekkXEBVWEI9VU0HjyNb4tP88iAeSal6', 'member'),
+(27, 'vinsmokeloverz@gmail.com', '$2y$10$JftNEcN.DdgOvSUstF1.m.XGSUhRCG7wyzS/4b6BqpmEPDib7xNLC', 'member');
 
 -- --------------------------------------------------------
 
@@ -164,7 +191,40 @@ INSERT INTO `voucher` (`id`, `matauang`, `nominal`, `harga`, `idgame`) VALUES
 (7, 'UC', '30', 3100, 12),
 (8, 'Points', '10', 1100, 11),
 (9, 'Points', '20', 2100, 11),
-(10, 'Points', '30', 3100, 11);
+(10, 'Points', '30', 3100, 11),
+(11, 'Diamond', '10', 1500, 14),
+(12, 'Diamond', '20', 2500, 14),
+(13, 'Diamond', '30', 3500, 14),
+(14, 'Diamond', '10', 1300, 15),
+(15, 'Diamond', '20', 2300, 15),
+(16, 'Diamond', '30', 3300, 15),
+(17, 'Diamond', '12312', 124132432, 16),
+(18, 'Diamond', '09', 123, 16);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `v_user`
+-- (See below for the actual view)
+--
+CREATE TABLE `v_user` (
+`id` int(11)
+,`email` varchar(30)
+,`password` varchar(250)
+,`role` varchar(10)
+,`idmember` int(11)
+,`fname` varchar(30)
+,`lname` varchar(30)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `v_user`
+--
+DROP TABLE IF EXISTS `v_user`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_user`  AS SELECT `u`.`id` AS `id`, `u`.`email` AS `email`, `u`.`password` AS `password`, `u`.`role` AS `role`, `m`.`idmember` AS `idmember`, `m`.`fname` AS `fname`, `m`.`lname` AS `lname` FROM (`user` `u` left join `member` `m` on(`u`.`id` = `m`.`iduser`)) ;
 
 --
 -- Indexes for dumped tables
@@ -175,6 +235,13 @@ INSERT INTO `voucher` (`id`, `matauang`, `nominal`, `harga`, `idgame`) VALUES
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `detail_pesanan`
+--
+ALTER TABLE `detail_pesanan`
+  ADD PRIMARY KEY (`idpesanan`,`idvoucher`),
+  ADD KEY `idvoucher` (`idvoucher`);
 
 --
 -- Indexes for table `game`
@@ -203,6 +270,13 @@ ALTER TABLE `member`
   ADD KEY `iduser` (`iduser`);
 
 --
+-- Indexes for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idmember` (`idmember`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -223,13 +297,13 @@ ALTER TABLE `voucher`
 -- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `game`
 --
 ALTER TABLE `game`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `genre`
@@ -238,26 +312,33 @@ ALTER TABLE `genre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `member`
+-- AUTO_INCREMENT for table `pesanan`
 --
-ALTER TABLE `member`
-  MODIFY `idmember` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pesanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `voucher`
 --
 ALTER TABLE `voucher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `detail_pesanan`
+--
+ALTER TABLE `detail_pesanan`
+  ADD CONSTRAINT `detail_pesanan_ibfk_1` FOREIGN KEY (`idpesanan`) REFERENCES `pesanan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `detail_pesanan_ibfk_2` FOREIGN KEY (`idvoucher`) REFERENCES `voucher` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `genregames`
@@ -271,6 +352,12 @@ ALTER TABLE `genregames`
 --
 ALTER TABLE `member`
   ADD CONSTRAINT `member_ibfk_1` FOREIGN KEY (`iduser`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  ADD CONSTRAINT `pesanan_ibfk_1` FOREIGN KEY (`idmember`) REFERENCES `member` (`idmember`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `voucher`

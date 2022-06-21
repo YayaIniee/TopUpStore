@@ -94,6 +94,24 @@
                     $this->idgame = $data['idgame'];	
                 }							
             }
+
+            public function SelectAllVoucherInOrder($arrayinorder){
+                $sql = 'SELECT * FROM voucher WHERE id IN ('.$arrayinorder.')';
+                $result = mysqli_query($this->connection, $sql);
+                $arrResult = Array();
+                $count = 0;
+                while($data = mysqli_fetch_array($result)){
+                    $objVoucher = new Voucher();
+                    $objVoucher->id=$data['id'];
+                    $objVoucher->nominal=$data['nominal'];
+                    $objVoucher->idgame=$data['idgame'];
+                    $objVoucher->matauang=$data['matauang'];
+                    $objVoucher->harga=$data['harga'];
+                    $arrResult[$count] = $objVoucher;
+                    $count++;
+                }
+                return $arrResult;
+            }
          }	 
     ?>
     
